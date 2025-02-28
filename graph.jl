@@ -15,7 +15,40 @@ function main()
     to_kn = [Vector{Int}() for _ in 1:junct_kn]  # Initialize adjacancy array to Nørreport
     from_kn = [Vector{Int}() for _ in 1:junct_kn]  # Initialize adjacancy array from Nørreport
 
-    # Add edges
+    # Add edges 
+    #to kn
+    addEdge(to_kn, 1, 14)
+    addEdge(to_kn, 2, 10)
+    addEdge(to_kn, 3, 11)
+    addEdge(to_kn, 4, 15)
+    addEdge(to_kn, 5, 16)
+    addEdge(to_kn, 6, 12)
+    addEdge(to_kn, 7, 13)
+    addEdge(to_kn, 8, 17)
+    addEdge(to_kn, 10, 14)
+    addEdge(to_kn, 11, 10)
+    addEdge(to_kn, 11, 15)
+    addEdge(to_kn, 12, 16)
+    addEdge(to_kn, 13, 12)
+    addEdge(to_kn, 13, 17)
+    addEdge(to_kn, 14, 18)
+    addEdge(to_kn, 15, 19)
+    addEdge(to_kn, 16, 21)
+    addEdge(to_kn, 17, 23)
+    addEdge(to_kn, 18, 19)
+    addEdge(to_kn, 18, 22)
+    addEdge(to_kn, 19, 18)
+    addEdge(to_kn, 19, 20)
+    addEdge(to_kn, 20, 21)
+    addEdge(to_kn, 20, 22)
+    addEdge(to_kn, 21, 20)
+    addEdge(to_kn, 21, 23)
+    addEdge(to_kn, 22, 24)
+    addEdge(to_kn, 23, 25)
+    addEdge(to_kn, 24, 127)
+    addEdge(to_kn, 25, 24)
+
+    #from kn
     addEdge(from_kn, 128, 25)
     addEdge(from_kn, 25, 23)
     addEdge(from_kn, 23, 21)
@@ -43,7 +76,7 @@ function main()
     
 
     println("Adjacency List Representation:")
-    #displayAdjList(to_kn)
+    displayAdjList(to_kn)
     displayAdjList(from_kn)
 end
 
