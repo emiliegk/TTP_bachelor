@@ -1,3 +1,7 @@
+using Pkg
+# Add if you don't have the package: Pkg.add("DataStructures") 
+using DataStructures
+
 function addEdge(adj, u, v) #Add edge from u to v
     push!(adj[u], v)  # Adjusting for 1-based indexing in Julia
 end
@@ -8,6 +12,56 @@ function displayAdjList(adj)
         println(join(neighbors, ", "))
         
     end
+end
+
+function printpath(path::Vector{Int}) #Specifies the path has to be a vector of integers
+    size = length(path)
+    println("")
+    for i in 1:size
+        print(path[i], " ")
+    end
+    println
+end
+
+function not_visited(x::Int, path::Vector{Int})
+    size = length(path)
+    for i in 1:size
+        if (path[i] == x)
+            return 0
+        end
+    end
+    return 1
+end
+
+#Find all paths using BFS
+function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Int, v::Int)
+    #Create queue for path
+    q = []
+
+    #Path vector to store the current path
+    path = Int[]
+    push!(path, src)
+    push!(q, copy(path))
+
+    while !isempty(q)
+        path = popfirst!(q)
+        last = path[length(path)]
+
+        #If last vertex is dst, print path
+        if last == dst
+            printpath(path)
+        end
+
+        for i in 1:length(g[last])
+            if not_visited(g[last][i], path) == 1
+                newpath = copy(path)
+                push!(newpath, g[last][i])
+                push!(q, newpath)
+            end
+        end
+    end
+  
+
 end
 
 function main()
@@ -75,9 +129,23 @@ function main()
     addEdge(from_kn, 14, 1)
     
 
-    println("Adjacency List Representation:")
-    displayAdjList(to_kn)
-    displayAdjList(from_kn)
+    #println("Adjacency List Representation:")
+    #displayAdjList(to_kn)
+    #displayAdjList(from_kn)
+    scrs = []
+    for i in 1:8
+        push!(scrs, i)
+    end
+    dst = 127
+
+    
+
+    for s in scrs
+        println("")
+        print("paths from platform $(s) to platform $(dst): ")
+        find_paths(to_kn, s, dst, junct_kn)
+        println( "")
+    end
 end
 
 main()
