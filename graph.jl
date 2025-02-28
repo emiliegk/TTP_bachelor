@@ -11,9 +11,9 @@ function displayAdjList(adj)
 end
 
 function main()
-    junct_kn = 128 #Number of junctions
-    to_kn = [Vector{Int}() for _ in 1:junct_kn]  # Initialize adjacancy array to Nørreport
-    from_kn = [Vector{Int}() for _ in 1:junct_kn]  # Initialize adjacancy array from Nørreport
+    junct = 128 #Number of junctions
+    to_kn = [Vector{Int}() for _ in 1:junct]  # Initialize adjacancy array to Nørreport
+    from_kn = [Vector{Int}() for _ in 1:junct]  # Initialize adjacancy array from Nørreport
 
     # Add edges 
     #to kn
