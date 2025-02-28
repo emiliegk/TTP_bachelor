@@ -1,4 +1,4 @@
-function addEdge(adj, u, v)
+function addEdge(adj, u, v) #Add edge from u to v
     push!(adj[u+1], v)  # Adjusting for 1-based indexing in Julia
 end
 
@@ -10,7 +10,7 @@ function displayAdjList(adj)
 end
 
 function main()
-    V = 3
+    V = 3 #Antallet af noder (sporskifter)
     adj = [Vector{Int}() for _ in 1:V]  # Initialize as a list of empty vectors
 
     # Add edges
