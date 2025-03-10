@@ -1,6 +1,7 @@
 using Pkg
 # Add if you don't have the package: Pkg.add("DataStructures") 
 using DataStructures
+using XLSX
 
 include("graph.jl") 
 using .Graph
@@ -36,9 +37,8 @@ function create_uses_junct(S, omega)
      end
      =#
     return matrix
+
 end
-
-
 
 
 function main()
@@ -59,6 +59,7 @@ function main()
     push!(dst, 127)
 
     #Stores all paths as a vector of vectors
+    #might not be the same omega as in the literature so be careful!!!!!!
     omega = find_paths(to_kn, srcs, dst, junct_kn) 
 
     #Creates vector with the junction numbers
@@ -69,6 +70,8 @@ function main()
 
     uses_junct = create_uses_junct(junct, omega)
 
+    find_trains()
+   
 end
 
 main()

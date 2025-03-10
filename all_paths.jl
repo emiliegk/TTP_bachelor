@@ -1,10 +1,34 @@
 using Pkg
 # Add if you don't have the package: Pkg.add("DataStructures") 
+#Pkg.add("XLSX")
+
 using DataStructures
+#Pkg.add("DataFrames")
+
+
 module All_paths
-export printpath, not_visited, find_paths
+using DataFrames
+using XLSX
+export printpath, not_visited, find_paths, find_trains
 
+#Finds trains to Nørreport
+function find_trains()
+    df = XLSX.readxlsx("Ophold_Kh.xlsx")
+    sheet = df["Data"]
+    data = sheet["B2:J"*string(size(sheet[:], 1))] 
+    to_matrix = Matrix(data)  # Ensures row-wise structure
 
+    #For now we are only interested in the trains going to Nørreport
+    #This has to be changed later!!!!!
+    
+    #to_kn_trains = to_matrix[to_matrix[:, 8] .== "Nørreport", :]
+    to_kn_trains = filter(x -> coalesce(x, "") == "Nørreport", to_matrix[:, 8])
+    #println("The number of trains going from Kh to Kn is: ")
+    #println(size(to_kn_trains,1))
+    return to_kn_trains
+end
+
+#Print function for all possible paths
 function printpath(path::Vector{Int}) #Specifies the path has to be a vector of integers
     size = length(path)
     println("")
@@ -14,6 +38,7 @@ function printpath(path::Vector{Int}) #Specifies the path has to be a vector of 
     println
 end
 
+#Function for BFS
 function not_visited(x::Int, path::Vector{Int})
     size = length(path)
     for i in 1:size
