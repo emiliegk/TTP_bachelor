@@ -21,21 +21,22 @@ function find_trains()
     #For now we are only interested in the trains going to Nørreport
     #This has to be changed later!!!!!
     
-    #to_kn_trains = to_matrix[to_matrix[:, 8] .== "Nørreport", :]
-    to_kn_trains = filter(x -> coalesce(x, "") == "Nørreport", to_matrix[:, 8])
+    
+    to_kn_trains = to_matrix[coalesce.(to_matrix[:,8], "") .== "Nørreport", :]
     #println("The number of trains going from Kh to Kn is: ")
-    #println(size(to_kn_trains,1))
+    
+
     return to_kn_trains
 end
 
 #Function linking all possible paths 
-function omega(graph::Vector{Int}, src::Vector{Int}, dst::Vector{Int}, v::Int)
+function omega(graph::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, v::Int)
     trains = find_trains()
     paths = find_paths(graph, src, dst, v)
     o = Vector{Vector}()
-    for i in 1:length(trains)
+    for i in 1:size(trains,1)
         for j in 1:length(paths)
-            push!(o, [paths[j],trains[i, 2]])
+            push!(o, [paths[j], trains[i, 2]])
 
         end
     end
@@ -69,8 +70,8 @@ function find_paths(g::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, 
     path_ids = []
     for s in src #For every starting point (source)
         for d in dst #For every destination
-            println("")
-            print("Paths from platform $(s) to platform $(d): ")
+            #println("")
+            #print("Paths from platform $(s) to platform $(d): ")
         
         #Create queue for path
             q = []
@@ -87,9 +88,9 @@ function find_paths(g::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, 
                 #If last vertex is dst, print path
                 if last == d
                     push!(path_ids, path)
-                    println("")
-                    print("Path ", path_count, ": " )
-                    printpath(path_ids[path_count])
+                    #println("")
+                    #print("Path ", path_count, ": " )
+                    #printpath(path_ids[path_count])
                     path_count += 1
                 end
 
@@ -101,8 +102,8 @@ function find_paths(g::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, 
                     end
                 end
             end
-            println("")
-            print("----------------")
+           #println("")
+            #print("----------------")
         end
     end
     println( "")
