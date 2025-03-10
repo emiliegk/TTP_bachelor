@@ -37,7 +37,6 @@ function omega(graph::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, v
     for i in 1:size(trains,1)
         for j in 1:length(paths)
             push!(o, [paths[j], trains[i, 2]])
-
         end
     end
     println(o)
