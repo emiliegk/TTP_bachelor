@@ -1,7 +1,7 @@
 using Pkg
 # Add if you don't have the package: Pkg.add("DataStructures") 
 #Pkg.add("XLSX")
-
+#Pkg.add("Dates")
 using DataStructures
 #Pkg.add("DataFrames")
 
@@ -9,7 +9,8 @@ using DataStructures
 module All_paths
 using DataFrames
 using XLSX
-export printpath, not_visited, find_paths, find_trains, omega
+using Dates
+export printpath, not_visited, find_paths, find_trains, omega, set_S
 
 #Finds trains to Nørreport
 function find_trains()
@@ -29,7 +30,7 @@ function find_trains()
     return to_kn_trains
 end
 
-#Function linking all possible paths 
+#Function linking all possible paths for each train to a train id
 function omega(graph::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, v::Int)
     trains = find_trains()
     paths = find_paths(graph, src, dst, v)
@@ -41,6 +42,60 @@ function omega(graph::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, v
         end
     end
     println(o)
+end
+
+function find_all_jcts(graph::Vector{Vector{Int}})
+    nodes = Set{Int}()  # Use a Set to store unique nodes
+
+    # Iterate through adjacency list
+    for (node, neighbors) in enumerate(graph)
+        if !isempty(neighbors)  # If the node has neighbors, it's part of the graph
+            push!(nodes, node)
+            for neighbor in neighbors
+                push!(nodes, neighbor)
+            end
+        end
+    end
+
+    return sort(collect(nodes))  # Convert the Set to a sorted Vector
+end
+
+#function linking sporstykke til minuttal
+function set_S(graph::Vector{Vector{Int}})
+    #Find min and max in minute time table
+    df = find_trains()
+    
+    min_time = minimum(df[:,7])
+    max_time = maximum(df[:,7])
+
+    #Generate all minutes between min and max
+    cur = min_time
+    min_count = []
+
+    while cur <= max_time
+        push!(min_count, cur)
+        cur += Dates.Minute(1)
+    end
+
+    #=for t in min_count
+        println(t)
+    end=#
+
+    #Find all junctions in a graph
+    jcts = find_all_jcts(graph)
+
+    #Combine junction with minute
+    s = []
+    for i in 1:length(jcts)
+        for j in 1:length(min_count)
+            s = push!(s, [jcts[i], min_count[j]])
+        end
+    end
+    println(s)
+    #for sporstykke
+        #for minuttal
+            #kombiner sporstykke med minuttal
+    return(s)
 end
 
 #Print function for all possible paths
@@ -67,7 +122,7 @@ end
 #Find all paths using BFS
 function find_paths(g::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, v::Int) #v = number of vertices in g
     path_count = 1
-    path_ids = []
+    path_jcts = []
     for s in src #For every starting point (source)
         for d in dst #For every destination
             #println("")
@@ -87,7 +142,7 @@ function find_paths(g::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, 
 
                 #If last vertex is dst, print path
                 if last == d
-                    push!(path_ids, path)
+                    push!(path_jcts, path)
                     #println("")
                     #print("Path ", path_count, ": " )
                     #printpath(path_ids[path_count])
@@ -106,9 +161,8 @@ function find_paths(g::Vector{Vector{Int}}, src::Vector{Int}, dst::Vector{Int}, 
             #print("----------------")
         end
     end
-    println( "")
-    return(path_ids)
+    println("")
+    return(path_jcts)
 end
-
 
 end
