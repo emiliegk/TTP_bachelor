@@ -69,9 +69,9 @@ function main()
     end
 
     uses_junct = create_uses_junct(junct, all_p)
-    find_trains()
+    set_S(to_kn)
 
-    omega(to_kn, srcs, dst, junct_kn)
+    #omega(to_kn, srcs, dst, junct_kn)
    
 end
 
