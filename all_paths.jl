@@ -9,7 +9,7 @@ using DataStructures
 module All_paths
 using DataFrames
 using XLSX
-export printpath, not_visited, find_paths, find_trains
+export printpath, not_visited, find_paths, find_trains, omega
 
 #Finds trains to Nørreport
 function find_trains()
@@ -26,6 +26,20 @@ function find_trains()
     #println("The number of trains going from Kh to Kn is: ")
     #println(size(to_kn_trains,1))
     return to_kn_trains
+end
+
+#Function linking all possible paths 
+function omega(graph::Vector{Int}, src::Vector{Int}, dst::Vector{Int}, v::Int)
+    trains = find_trains()
+    paths = find_paths(graph, src, dst, v)
+    o = Vector{Vector}()
+    for i in 1:length(trains)
+        for j in 1:length(paths)
+            push!(o, [paths[j],trains[i, 2]])
+
+        end
+    end
+    println(o)
 end
 
 #Print function for all possible paths

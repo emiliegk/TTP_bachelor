@@ -60,7 +60,7 @@ function main()
 
     #Stores all paths as a vector of vectors
     #might not be the same omega as in the literature so be careful!!!!!!
-    omega = find_paths(to_kn, srcs, dst, junct_kn) 
+    all_p = find_paths(to_kn, srcs, dst, junct_kn) 
 
     #Creates vector with the junction numbers
     junct = Int[]
@@ -68,9 +68,9 @@ function main()
         push!(junct, s)
     end
 
-    uses_junct = create_uses_junct(junct, omega)
+    uses_junct = create_uses_junct(junct, all_p)
 
-    find_trains()
+    omega(to_kn, srcs, dst, junct_kn)
    
 end
 
