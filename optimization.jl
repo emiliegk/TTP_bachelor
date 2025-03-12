@@ -51,7 +51,26 @@ function set_packing(T::Matrix{Int64}, R::Matrix{Int64})
     if status == MOI.OPTIMAL
         println("Optimal solution found")
         println("Objective value: ", objective_value(model))
-        println("Selected paths: ", value.(x))
+        println("Selected paths: ")
+
+        #=
+        # Get the values of x as a vector
+        x_values = value.(x)
+
+        # Print the values with a newline after every 23rd value
+        for i in 1:length(x_values)
+            #print(x_value[i], " ")
+            println("Index: $i, Value: $(x_values[i])") 
+            if i % 23 == 0
+                println("hello")
+                println("")  # Newline after every 23rd value
+                println("")  # Extra newline to separate blocks of 23 values
+            end
+        end
+        println()  # Final newline to ensure the output ends cleanly
+
+=#
+
         return value.(x)  # Return the selected paths
     else
         println("No optimal solution found. Status: ", status)
