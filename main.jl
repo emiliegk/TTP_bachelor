@@ -38,12 +38,11 @@ function main()
         push!(junct, s)
     end
 
-    uses_junct = create_uses_junct(junct, all_p)
     S = set_S(to_kn)
     o = omega(to_kn, srcs, dst, junct_kn)
 
-    typeof(mat_T(o))
-    typeof(mat_R(S,o))
+    set_packing(mat_T(o),mat_R(S,o))
+
    
 end
 
