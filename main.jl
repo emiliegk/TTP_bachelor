@@ -7,38 +7,8 @@ include("graph.jl")
 using .Graph
 include("all_paths.jl")
 using .All_paths
-
-function create_uses_junct(S, omega)
-    n_junct = length(S)
-    n_paths = length(omega)
-
-    #initialize the matrix with zeros
-    matrix = zeros(Int, n_junct, n_paths)
-    for (col, path) in enumerate(omega)
-        for junct in path
-            matrix[junct, col] = 1
-        end
-    end
-    #=
-     # Print column headers (paths)
-     print("Junction \\ Path | ")
-     for col in 1:n_paths
-         print("Path $col | ")
-     end
-     println()  
- 
-     # Print each row (junction) with its binary values
-     for row in 1:n_junct
-         print(lpad(S[row], 8), " | ")  # Print junction number (row label)
-         for col in 1:n_paths
-             print(lpad(matrix[row, col], 6), " | ")  # Print binary value
-         end
-         println()  
-     end
-     =#
-    return matrix
-
-end
+include("optimization.jl")
+using .optimization
 
 
 function main()
@@ -72,7 +42,8 @@ function main()
     S = set_S(to_kn)
     o = omega(to_kn, srcs, dst, junct_kn)
 
-    mat_T(o)
+    typeof(mat_T(o))
+    typeof(mat_R(S,o))
    
 end
 
