@@ -1,9 +1,5 @@
 using Pkg
-# Add if you don't have the package: Pkg.add("DataStructures") 
-#Pkg.add("XLSX")
-#Pkg.add("Dates")
 using DataStructures
-#Pkg.add("DataFrames")
 
 
 module All_paths

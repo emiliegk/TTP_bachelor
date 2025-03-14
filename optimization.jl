@@ -1,9 +1,5 @@
 using Pkg
-# Add if you don't have the package: Pkg.add("DataStructures") 
-#Pkg.add("XLSX")
-#Pkg.add("Dates")
 using DataStructures
-#Pkg.add("DataFrames")
 
 
 module optimization
@@ -53,7 +49,7 @@ function set_packing(T::Matrix{Int64}, R::Matrix{Int64})
         println("Objective value: ", objective_value(model))
         println("Selected paths: ")
 
-        #=
+        
         # Get the values of x as a vector
         x_values = value.(x)
 
@@ -62,14 +58,13 @@ function set_packing(T::Matrix{Int64}, R::Matrix{Int64})
             #print(x_value[i], " ")
             println("Index: $i, Value: $(x_values[i])") 
             if i % 23 == 0
-                println("hello")
                 println("")  # Newline after every 23rd value
                 println("")  # Extra newline to separate blocks of 23 values
             end
         end
         println()  # Final newline to ensure the output ends cleanly
 
-=#
+
 
         return value.(x)  # Return the selected paths
     else
