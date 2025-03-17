@@ -29,15 +29,17 @@ function set_packing(T::Matrix{Int64}, R::Matrix{Int64})
     # Objective function: maximize the sum of selected paths (since rho is 1)
     @objective(model, Max, sum(x))
 
+     # Constraint: each resource can be used by at most one path
+     for s in 1:num_resources
+        @constraint(model, sum(R[s, j] * x[j] for j in 1:num_paths) <= 1)
+    end
+
     # Constraint: each train must have exactly one path
     for i in 1:num_trains
         @constraint(model, sum(T[i, j] * x[j] for j in 1:num_paths) == 1)
     end
 
-    # Constraint: each resource can be used by at most one path
-    for s in 1:num_resources
-        @constraint(model, sum(R[s, j] * x[j] for j in 1:num_paths) <= 1)
-    end
+   
 
     # Solve the model
     optimize!(model)
@@ -57,10 +59,10 @@ function set_packing(T::Matrix{Int64}, R::Matrix{Int64})
         for i in 1:length(x_values)
             #print(x_value[i], " ")
             println("Index: $i, Value: $(x_values[i])") 
-            if i % 23 == 0
+            #=if i % 23 == 0
                 println("")  # Newline after every 23rd value
                 println("")  # Extra newline to separate blocks of 23 values
-            end
+            end=#
         end
         println()  # Final newline to ensure the output ends cleanly
 
