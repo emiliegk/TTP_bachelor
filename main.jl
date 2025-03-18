@@ -13,32 +13,35 @@ using .optimization
 
 function main()
     junct = 128
-    from_kh = create_graph("to")
+    dir = create_graph("to") #initialize direction of graph
 
-    df = find_trains()
+    df = find_trains(dir)
+    println(df)
+    println("")
+    #=
     #println("Adjacency List Representation:")
     #displayAdjList(to_kn)
     #displayAdjList(from_kn)
 
     #Create starting point(s) and destination(s)
     
-    dst = Int[]
-    push!(dst, 127)
+    
+    
+    
+   
 
-    #t_src = allocate_t_src(df)
-    #Stores all paths as a vector of vectors
-    #might not be the same omega as in the literature so be careful!!!!!!
-    #all_p = find_paths(to_kn, t_src, dst, junct_kn) 
+    t_src = allocate_t_src(dir, df)
+    t_dst = allocate_t_dst(dir, df)
 
-    #Creates vector with the junction numbers
-    #=junct = Int[]
-    for s in 1:junct_kn
-        push!(junct, s)
-    end=#
 
-    S = set_S(from_kh, df)
-    #o = omega(from_kh, t_src, dst, junct, df) figure out how omega can run so that we can 
-
+    S = set_S(dir, df)
+    o = omega(dir, t_src, t_dst, junct, df)
+  
+    R = mat_R(S, o, df, dir)
+    T = mat_T(dir, o, df)
+    x = (set_packing(T, R))
+    id_op_path(T, x, o)
+    =#
     
    
 end

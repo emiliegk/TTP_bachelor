@@ -6,39 +6,94 @@ module All_paths
 using DataFrames
 using XLSX
 using Dates
-export printpath, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src
+export printpath, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
-function find_trains() 
+function find_trains(g::Tuple{Vector{Vector{Int}}, Int}) 
     df = XLSX.readxlsx("Ophold_Kh.xlsx")
     sheet = df["Data"]
     data = sheet["B2:J"*string(size(sheet[:], 1))] 
     to_matrix = Matrix(data)  # Ensures row-wise structure
         
+    # Handle missing values in column 1 and column 2
+    for i in 1:size(to_matrix, 1)  # Loop through each row
+        if ismissing(to_matrix[i, 1])  # Check if column 1 is missing
+            to_matrix[i, 1] = to_matrix[i, 5]  # Replace with column 5
+        end
+        if ismissing(to_matrix[i, 2])  # Check if column 2 is missing
+            to_matrix[i, 2] = to_matrix[i, 6]  # Replace with column 6
+        end
+        if ismissing(to_matrix[i, 3])
+            # Subtract column 9 from column 7 (DateTime format)
+            to_matrix[i, 3] = to_matrix[i, 7] - Dates.Minute(to_matrix[i, 9])
+        end
+        if ismissing(to_matrix[i, 4])
+            to_matrix[i, 4] = "Workshop"
+        end
+        if ismissing(to_matrix[i, 5])  
+            to_matrix[i, 5] = to_matrix[i, 1]  
+        end
+        if ismissing(to_matrix[i, 6])  # Check if column 2 is missing
+            to_matrix[i, 6] = to_matrix[i, 2]  # Replace with column 6
+        end
+        if ismissing(to_matrix[i, 7])
+            # Subtract column 9 from column 7 (DateTime format)
+            to_matrix[i, 7] = to_matrix[i, 3] + Dates.Minute(to_matrix[i, 9])
+        end
+        if ismissing(to_matrix[i, 8])
+            to_matrix[i, 8] = "Workshop"
+        end
+        # Check if values in column 2 and column 6 are the same
+        if to_matrix[i, 2] != to_matrix[i, 6]
+            # Replace both values with "col2_col6"
+            new_value = string(to_matrix[i, 2]) * "_" * string(to_matrix[i, 6])
+            to_matrix[i, 2] = new_value
+            to_matrix[i, 6] = new_value
+        end
+
+    end
+  
     #For now we are only interested in the trains going to Nørreport
     #This has to be changed later!!!!!
-    
-    filtered_df = to_matrix[coalesce.(to_matrix[:,8], "") .== "Nørreport", :]
+    if g[2] == 1
+        cleaned_df = to_matrix[to_matrix[:, 8] .== "Nørreport", :]
+    elseif g[2] == 2
+        cleaned_df = to_matrix[to_matrix[:, 4] .== "Nørreport", :]
+    end
+
+    #when all stations are implemented:
+    #cleaned_df =  coalesce.(to_matrix, "")
+
     #println(to_kn_trains)
    
         
-    return filtered_df
+    return cleaned_df
 end
 
 #Function linking all possible paths for each train to a train id
-function omega(g::Tuple{Vector{Vector{Int64}}, Int64}, t_src::Vector{Any}, dst::Vector{Int}, v::Int, df::Matrix{Any})
-    trains = df
+function omega(g::Tuple{Vector{Vector{Int}}, Int}, t_src::Vector{Any}, t_dst::Vector{Any}, v::Int, df::Matrix{Any})
+    if g[2] == 1
+        trains = df[df[:, 8] .!= "", :]
+        train_ids = trains[:, 6]
+    elseif g[2] == 2
+        trains = df[df[:, 4] .!= "", :]
+        train_ids = trains[:, 2]
+
+    end
+    
     graph = g[1]
 
     o = []
     for i in 1:size(trains, 1)
-        paths_train_i = find_paths(graph, t_src[i][2], dst, v)
-        train_id = trains[i, 6]
-        for j in 1:length(paths_train_i)
-            push!(o, [paths_train_i[j], train_id])
+        
+        paths_train_i = find_paths(graph, t_src[i][2], t_dst[i][2], v)
+        train_id = train_ids[i]
+        for k in 1:length(paths_train_i)
+            push!(o, [paths_train_i[k], train_id])
         end
+
     end
-   
+    
     return o
 end
 
@@ -63,6 +118,7 @@ end
 function set_S(graph::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
     
     if graph[2] == 1
+        df = df[df[:, 8] .!= "", :]
         #Find min and max in minute time table    
         min_time = minimum(df[:,7])
         max_time = maximum(df[:,7])
@@ -76,6 +132,7 @@ function set_S(graph::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
         end
 
     elseif graph[2] == 2
+        df = df[df[:, 4] .!= "", :]
             #Find min and max in minute time table    
         min_time = minimum(df[:,3])
         max_time = maximum(df[:,3])
@@ -105,20 +162,26 @@ function set_S(graph::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
 end
 
 function train_time_mapping(df::Matrix{Any}, graph::Tuple{Vector{Vector{Int64}}, Int64})
+
     train_time_map = Dict{Int, Dates.Time}()
+
     if graph[2] == 1
-        for i in 1:size(df, 1)
-            train_id = df[i, 6]
-            departure_time = df[i,7]
+        trains = df[df[:, 8] .!= "", :]
+        for i in 1:size(trains, 1)
+            train_id = trains[i, 6]
+            departure_time = trains[i,7]
             train_time_map[train_id] = departure_time
         end
+
     elseif graph[2] == 2
-        for i in 1:size(df, 1)
-            train_id = df[i, 2]
-            arrival_time = df[i,3]
+        trains = df[df[:, 4] .!= "", :]
+        for i in 1:size(trains, 1)
+            train_id = trains[i, 2]
+            arrival_time = trains[i,3]
             train_time_map[train_id] = arrival_time
         end
     end
+ 
     return train_time_map
 end
 
@@ -131,29 +194,41 @@ function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, graph::Tuple
 
     #Create mapping btw train id and departure time
     train_time_map = train_time_mapping(df, graph)
+    
     #Extract the junction from set_S
     jct_set = [j[1] for j in S]
     time_set = [j[2] for j in S]
 
+
     for r in 1:length(S)
-        time = time_set[r]
+        time = time_set[r] 
         for c in 1:length(Omega)
             train_id = Omega[c][2] #Find train ID for train
+            #print statement
             move_time = train_time_map[train_id] #Look up the departure time for that train
             
+                       
+            #println("Move time: ", move_time)
             #If a junction is in a path at a given time, change 0 to 1
             if jct_set[r] in path_set[c] 
+                #=
+                println(move_time)
+                println(time)
+                println("")
+                =#
                     #Currently, the junctions used by the trains are blocked for 3 minutes (departure time + 2 min)
-                    if (time >= move_time && time <= move_time + Dates.Minute(2)) && graph[2] == 1
+                    if (move_time <= time <= move_time + Dates.Minute(2) ) && graph[2] == 1
                         init_m[r, c] = 1
+                    elseif (move_time - Dates.Minute(2) <= time <= move_time ) && graph[2] == 2
+                        init_m[r, c] = 1
+                        #
+
                     end
-                    elseif (time - Dates.Minute(2) >= move_time && time <= move_time ) && graph[2] == 2
-                        init_m[r, c] = 1
             end
         end
     end
-    
-    #=count = 0
+    #=
+    count = 0
     for i in 1:length(S)
         if jct_set[i] != count
             count = jct_set[i]
@@ -162,20 +237,31 @@ function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, graph::Tuple
             println("Track ", count)
             println("----------------------------------")
         end
-        print(init_m[i,23])
+        print(init_m[i,1])
             
     end 
+    
     =#
     return init_m
 end
 
-function mat_T(Omega::Vector{Any}, df::Matrix{Any})
-    train_id = df[:,6]
+
+function mat_T(g::Tuple{Vector{Vector{Int}}, Int} , Omega::Vector{Any}, df::Matrix{Any})
+    if g[2] == 1
+        trains = df[df[:, 8] .!= "", :]
+        train_ids = trains[:, 6]
+    elseif g[2] == 2
+        trains = df[df[:, 4] .!= "", :]
+        train_ids = trains[:, 2]
+    end
+
     #initialize matrix
-    init_m = zeros(Int, length(train_id), length(Omega))
-    for i in 1:length(train_id)
+    init_m = zeros(Int, length(train_ids), length(Omega))
+
+    #Assign 1 if train_id is same in column and omega
+    for i in 1:length(train_ids)
         for j in 1:length(Omega)
-            if train_id[i] == Omega[j][2]
+            if train_ids[i] == Omega[j][2]
                 init_m[i,j] = 1
             end
         end
@@ -186,12 +272,12 @@ function mat_T(Omega::Vector{Any}, df::Matrix{Any})
     for value in Iterators.flatten(eachrow(init_m))  # Flatten the matrix row-wise
         print(value, " ")  # Print each number with a space
         count += 1
-        if count % (33*23)== 0  # Insert a newline every 33 numbers
+        if count % (95)== 0  # Insert a newline every 33 numbers
             println("")
             println("")
         end
-    end
-    =#
+    end=#
+    
 
     return init_m
 end
@@ -210,17 +296,57 @@ function not_visited(x::Int, path::Vector{Int})
     return 1
 end
 
-function allocate_t_src(df::Matrix{Any})
+function allocate_t_src(g::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
     t_src = []
-    for i in 1:size(df, 1)
-        push!(t_src, [df[i,6], i%8 + 1])
+    if g[2] == 1 #If from_kh
+        for i in 1:size(df, 1)
+            push!(t_src, [df[i,6], i%8 + 1])
+        end
+    elseif g[2] == 2 #if to_kh
+        for i in 1:size(df, 1)
+            if df[i, 4] == "Nørreport"
+                push!(t_src, [df[i,2], 128])
+            elseif df[i, 4] == "Valby"
+                push!(t_src, [df[i,2], 123])
+            elseif df[i, 4] == "Ny Ellebjerg/København Syd"
+                push!(t_src, [df[i,2], 121])
+            elseif df[i, 4] == "CPH Lufthavn"
+                push!(t_src, [df[i,2], 125])
+            end
+        end
     end
+
     
     return t_src
 end 
 
+function allocate_t_dst(g::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
+    t_dst = []
+    if g[2] == 2 #If to_kh
+        for i in 1:size(df, 1)
+            push!(t_dst, [df[i,2], i%8 + 1])
+        end
+    elseif g[2] == 1 #if from_kh
+        for i in 1:size(df, 1)
+            if df[i, 8] == "Nørreport"
+                push!(t_dst, [df[i,6], 127])
+            elseif df[i, 8] == "Valby"
+                push!(t_dst, [df[i,6], 124])
+            elseif df[i, 8] == "Ny Ellebjerg/København Syd"
+                push!(t_dst, [df[i,6], 122])
+            elseif df[i, 8] == "CPH Lufthavn"
+                push!(t_dst, [df[i,6], 126])
+            end
+        end
+    end
+
+    
+    return t_dst
+
+end 
+
 #Find all paths using BFS
-function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Vector{Int}, v::Int) #v = number of vertices in g
+function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Int, v::Int) #v = number of vertices in g
     path_count = 1
     path_jcts = []
     for s in src #For every starting point (source)
