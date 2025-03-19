@@ -156,7 +156,7 @@ function create_graph(dir::String)
         addEdge(to_kh, 10, 2)
         addEdge(to_kh, 10, 11)
         addEdge(to_kh, 14, 1)
-        #Implent edges from Valby to Kh
+        #Implement edges from Valby to Kh
         addEdge(to_kh, 123, 92)
         addEdge(to_kh, 92, 64)
         addEdge(to_kh, 64, 45)
