@@ -9,7 +9,7 @@ using Dates
 export printpath, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
-function find_trains(g::Tuple{Vector{Vector{Int}}, Int}) 
+function find_trains() 
     df = XLSX.readxlsx("Ophold_Kh.xlsx")
     sheet = df["Data"]
     data = sheet["B2:J"*string(size(sheet[:], 1))] 
@@ -55,11 +55,17 @@ function find_trains(g::Tuple{Vector{Vector{Int}}, Int})
   
     #For now we are only interested in the trains going to Nørreport
     #This has to be changed later!!!!!
-    if g[2] == 1
-        cleaned_df = to_matrix[to_matrix[:, 8] .== "Nørreport", :]
-    elseif g[2] == 2
-        cleaned_df = to_matrix[to_matrix[:, 4] .== "Nørreport", :]
-    end
+    
+    cleaned_df = to_matrix[(to_matrix[:, 8] .== "Nørreport") .| (to_matrix[:, 4] .== "Nørreport") , :]
+    
+    # Corrected code
+    cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .| (cleaned_df[:, 8] .== "Ny Ellebjerg/København Syd") .| 
+                                (cleaned_df[:, 4] .== "Workshop") .| (cleaned_df[:, 4] .== "Ny Ellebjerg/København Syd") ), :]
+
+
+
+   
+    
 
     #when all stations are implemented:
     #cleaned_df =  coalesce.(to_matrix, "")
@@ -71,7 +77,11 @@ function find_trains(g::Tuple{Vector{Vector{Int}}, Int})
 end
 
 #Function linking all possible paths for each train to a train id
-function omega(g::Tuple{Vector{Vector{Int}}, Int}, t_src::Vector{Any}, t_dst::Vector{Any}, v::Int, df::Matrix{Any})
+function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vector{Int}}, Int}, v::Int, df::Matrix{Any})
+    t_src_to = allocate_t_src(g_to, df)
+    t_dst_from = allocate_t_dst(g_from, df)
+
+#=
     if g[2] == 1
         trains = df[df[:, 8] .!= "", :]
         train_ids = trains[:, 6]
@@ -79,22 +89,48 @@ function omega(g::Tuple{Vector{Vector{Int}}, Int}, t_src::Vector{Any}, t_dst::Ve
         trains = df[df[:, 4] .!= "", :]
         train_ids = trains[:, 2]
 
-    end
+    end=#
     
-    graph = g[1]
+    to_graph = g_to[1]
+    from_graph = g_from[1]
 
-    o = []
-    for i in 1:size(trains, 1)
-        
-        paths_train_i = find_paths(graph, t_src[i][2], t_dst[i][2], v)
-        train_id = train_ids[i]
-        for k in 1:length(paths_train_i)
-            push!(o, [paths_train_i[k], train_id])
+    #Create ingoing possible paths with train ids
+    to_set = []
+    for i in 1:size(df, 1)
+        train_id = df[i, 2]  # train_id is in column 2
+        for dst_platform in 1:8  # All 8 platforms as possible destinations
+            paths_to = find_paths(to_graph, t_src_to[i][2], dst_platform, v)
+            for path in paths_to
+                push!(to_set, (train_id, path, dst_platform))
+            end
         end
-
     end
     
-    return o
+    #Create outgoing possible paths with train ids
+    from_set = []
+    for i in 1:size(df, 1)
+        train_id = df[i, 2]  # train_id is in column 2
+        for src_platform in 1:8  # All 8 platforms as possible sources
+            paths_from = find_paths(from_graph, src_platform, t_dst_from[i][2], v)
+            for path in paths_from
+                push!(from_set, (train_id, path, src_platform))
+            end
+        end
+    end
+ 
+
+    #Combine the paths to make one path from src to dst
+    combined_paths = []
+    for (train_id_to, path_to, dst_platform) in to_set
+        for (train_id_from, path_from, src_platform) in from_set
+            if train_id_to == train_id_from && dst_platform == src_platform
+                combined_path = vcat(path_to, path_from[2:end])  # Avoid duplicating the platform
+                push!(combined_paths, (train_id_to, combined_path))
+            end
+        end
+    end
+
+    return combined_paths
 end
 
 function find_all_jcts(g::Tuple{Vector{Vector{Int64}}, Int64})
@@ -272,7 +308,7 @@ function mat_T(g::Tuple{Vector{Vector{Int}}, Int} , Omega::Vector{Any}, df::Matr
     for value in Iterators.flatten(eachrow(init_m))  # Flatten the matrix row-wise
         print(value, " ")  # Print each number with a space
         count += 1
-        if count % (95)== 0  # Insert a newline every 33 numbers
+        if count % (235)== 0  # Insert a newline every 33 numbers
             println("")
             println("")
         end
