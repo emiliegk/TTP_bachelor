@@ -45,8 +45,8 @@ function find_trains(g::Tuple{Vector{Vector{Int}}, Int})
         end
         # Check if values in column 2 and column 6 are the same
         if to_matrix[i, 2] != to_matrix[i, 6]
-            # Replace both values with "col2_col6"
-            new_value = string(to_matrix[i, 2]) * "_" * string(to_matrix[i, 6])
+            # Replace both values with "col2col6"
+            new_value = (to_matrix[i, 2]) *  (to_matrix[i, 6])
             to_matrix[i, 2] = new_value
             to_matrix[i, 6] = new_value
         end

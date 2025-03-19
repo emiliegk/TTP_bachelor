@@ -16,9 +16,8 @@ function main()
     dir = create_graph("to") #initialize direction of graph
 
     df = find_trains(dir)
-    println(df)
-    println("")
-    #=
+  
+    
     #println("Adjacency List Representation:")
     #displayAdjList(to_kn)
     #displayAdjList(from_kn)
@@ -41,9 +40,8 @@ function main()
     T = mat_T(dir, o, df)
     x = (set_packing(T, R))
     id_op_path(T, x, o)
-    =#
     
-   
+
 end
 
 main()
