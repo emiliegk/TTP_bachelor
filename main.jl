@@ -17,12 +17,12 @@ function main()
     from_kh = create_graph("from")
     df = find_trains()
 
-    println(train_time_mapping(df, to_kh, from_kh))
-    print("")
+    
 
-    S = set_S(to_kh, from_kh, df)
-    o = omega(to_kh, from_kh, junct, df)
-   
+    #S = set_S(to_kh, from_kh, df)
+    #o = omega(to_kh, from_kh, junct, df)
+    println(train_time_mapping(df, to_kh, from_kh)[4521][2])
+    println("")
 
     #println( mat_T(o, df))
    

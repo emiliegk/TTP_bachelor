@@ -125,7 +125,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         for (train_id_from, path_from, src_platform) in from_set
             if train_id_to == train_id_from && dst_platform == src_platform
                 combined_path = vcat(path_to, path_from[2:end])  # Avoid duplicating the platform
-                push!(combined_paths, (train_id_to, combined_path))
+                push!(combined_paths, (train_id_to, combined_path, path_to[1:end-1], path_to[end], path_from[2:end]))
             end
         end
     end
@@ -222,7 +222,9 @@ function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, g_to::Tuple{
         for c in 1:length(Omega)
             train_id = Omega[c][1] #Find train ID for train
             #print statement
-            move_time = train_time_map[train_id] #Look up the departure time for that train
+            ar_time = train_time_map[train_id][1]
+            dep_time = train_time_map[train_id][2]
+            
             
                        
             #If a junction is in a path at a given time, change 0 to 1
