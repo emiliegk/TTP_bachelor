@@ -202,7 +202,6 @@ function train_time_mapping(df::Matrix{Any}, g_to::Tuple{Vector{Vector{Int64}}, 
 end
 
 
-
 function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, graph::Tuple{Vector{Vector{Int64}}, Int64})
     #Initialize matrix 
     init_m = zeros(Int, length(S), length(Omega))
