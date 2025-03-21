@@ -6,7 +6,7 @@ module All_paths
 using DataFrames
 using XLSX
 using Dates
-export printpath, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
+export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
 function find_trains() 
@@ -150,16 +150,13 @@ function find_all_jcts(g::Tuple{Vector{Vector{Int64}}, Int64})
     return sort(collect(nodes))  # Convert the Set to a sorted Vector
 end
 
-#function linking sporstykke til minuttal
-function set_S(graph::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
-    
-    if graph[2] == 1
-        df = df[df[:, 8] .!= "", :]
-        #Find min and max in minute time table    
-        min_time = minimum(df[:,7])
+#function linking junction to minute
+function set_S(g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
+        #Find min and max times in data set  
+        min_time = minimum(df[:,3])
         max_time = maximum(df[:,7])
         #Generate all minutes between min and max
-        cur = min_time
+        cur = min_time - Dates.Minute(2)
         min_count = []
 
         while cur <= (max_time + Dates.Minute(2))
@@ -167,24 +164,14 @@ function set_S(graph::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
             cur += Dates.Minute(1)
         end
 
-    elseif graph[2] == 2
-        df = df[df[:, 4] .!= "", :]
-            #Find min and max in minute time table    
-        min_time = minimum(df[:,3])
-        max_time = maximum(df[:,3])
-        #Generate all minutes between min and max
-        cur = min_time - Dates.Minute(2)
-        min_count = []
-
-        while cur <= max_time
-            push!(min_count, cur)
-            cur += Dates.Minute(1)
-        end
-    end
+    
 
     
     #Find all junctions in a graph
-    jcts = find_all_jcts(graph)
+    jcts_to = find_all_jcts(g_to)
+    jcts_from = find_all_jcts(g_from)
+    jcts = unique(vcat(jcts_from, jcts_to))
+    
 
     #Combine junction with minute
     s = []
