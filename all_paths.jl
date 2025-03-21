@@ -184,29 +184,23 @@ function set_S(g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{V
     return(s)
 end
 
-function train_time_mapping(df::Matrix{Any}, graph::Tuple{Vector{Vector{Int64}}, Int64})
 
-    train_time_map = Dict{Int, Dates.Time}()
+function train_time_mapping(df::Matrix{Any}, g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{Vector{Int64}}, Int64})
+    
+    train_time_map = Dict{Int, Tuple{Dates.Time, Dates.Time}}()
 
-    if graph[2] == 1
-        trains = df[df[:, 8] .!= "", :]
-        for i in 1:size(trains, 1)
-            train_id = trains[i, 6]
-            departure_time = trains[i,7]
-            train_time_map[train_id] = departure_time
-        end
+    for i in 1:size(df, 1)
+        train_id = df[i, 2]  
+        departure_time = df[i, 7]
+        arrival_time = df[i, 3]
 
-    elseif graph[2] == 2
-        trains = df[df[:, 4] .!= "", :]
-        for i in 1:size(trains, 1)
-            train_id = trains[i, 2]
-            arrival_time = trains[i,3]
-            train_time_map[train_id] = arrival_time
-        end
+        # Store both times in the dictionary
+        train_time_map[train_id] = (arrival_time, departure_time)
     end
- 
+
     return train_time_map
 end
+
 
 function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{Vector{Int64}}, Int64})
     #Initialize matrix 
