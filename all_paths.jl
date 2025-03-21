@@ -208,15 +208,15 @@ function train_time_mapping(df::Matrix{Any}, graph::Tuple{Vector{Vector{Int64}},
     return train_time_map
 end
 
-function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, graph::Tuple{Vector{Vector{Int64}}, Int64})
+function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{Vector{Int64}}, Int64})
     #Initialize matrix 
     init_m = zeros(Int, length(S), length(Omega))
 
     #isolate the paths from omega
-    path_set = [i[1] for i in Omega] # Convert the Set back to a Vector
+    path_set = [i[2] for i in Omega] # Convert the Set back to a Vector
 
     #Create mapping btw train id and departure time
-    train_time_map = train_time_mapping(df, graph)
+    train_time_map = train_time_mapping(df, g_to, g_from)
     
     #Extract the junction from set_S
     jct_set = [j[1] for j in S]
@@ -226,12 +226,11 @@ function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, graph::Tuple
     for r in 1:length(S)
         time = time_set[r] 
         for c in 1:length(Omega)
-            train_id = Omega[c][2] #Find train ID for train
+            train_id = Omega[c][1] #Find train ID for train
             #print statement
             move_time = train_time_map[train_id] #Look up the departure time for that train
             
                        
-            #println("Move time: ", move_time)
             #If a junction is in a path at a given time, change 0 to 1
             if jct_set[r] in path_set[c] 
                 #=
@@ -269,14 +268,10 @@ function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, graph::Tuple
 end
 
 
-function mat_T(g::Tuple{Vector{Vector{Int}}, Int} , Omega::Vector{Any}, df::Matrix{Any})
-    if g[2] == 1
-        trains = df[df[:, 8] .!= "", :]
-        train_ids = trains[:, 6]
-    elseif g[2] == 2
-        trains = df[df[:, 4] .!= "", :]
-        train_ids = trains[:, 2]
-    end
+function mat_T(Omega::Vector{Any}, df::Matrix{Any})
+    
+    train_ids = df[:, 2]
+    
 
     #initialize matrix
     init_m = zeros(Int, length(train_ids), length(Omega))
@@ -284,7 +279,7 @@ function mat_T(g::Tuple{Vector{Vector{Int}}, Int} , Omega::Vector{Any}, df::Matr
     #Assign 1 if train_id is same in column and omega
     for i in 1:length(train_ids)
         for j in 1:length(Omega)
-            if train_ids[i] == Omega[j][2]
+            if train_ids[i] == Omega[j][1]
                 init_m[i,j] = 1
             end
         end
@@ -295,7 +290,7 @@ function mat_T(g::Tuple{Vector{Vector{Int}}, Int} , Omega::Vector{Any}, df::Matr
     for value in Iterators.flatten(eachrow(init_m))  # Flatten the matrix row-wise
         print(value, " ")  # Print each number with a space
         count += 1
-        if count % (235)== 0  # Insert a newline every 33 numbers
+        if count % (5522)== 0  # Insert a newline every 33 numbers
             println("")
             println("")
         end
