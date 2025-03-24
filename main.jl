@@ -16,7 +16,7 @@ using .visuals
 
 
 function main()
-    #=
+    
     junct = 128
     to_kh = create_graph("to") #initialize direction of graph
     from_kh = create_graph("from")
@@ -29,13 +29,14 @@ function main()
     
 
     R = mat_R(S, o, df)
-    T = mat_T(o, df)
+    #T = mat_T(o, df)
     
-    x = set_packing(T, R)
+    #x = set_packing(T, R)
     
-    id_op_path(T, x, o)=#
+    #id_op_path(T, x, o)
 
-    # Mock data (train ID, platform, start time in minutes, end time in minutes, color)
+    #= 
+    #Mock data (train ID, platform, start time in minutes, end time in minutes, color)
 train_data = [
     (4302, 1, 0, 10, :blue),
     (4500, 2, 8, 18, :red),
@@ -91,7 +92,7 @@ train_data = [
 ]
 
     create_swimlanes(train_data)
-    
+    =#
 
 end
 
