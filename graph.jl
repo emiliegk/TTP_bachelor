@@ -198,7 +198,7 @@ function create_graph(dir::String)
         addEdge(to_kh, 10, 2)
         addEdge(to_kh, 10, 11)
         addEdge(to_kh, 14, 1)
-        #Implement edges from Valby to Kh
+        #Implement edges from Valby to KH
         addEdge(to_kh, 123, 92)
         addEdge(to_kh, 92, 64)
         addEdge(to_kh, 64, 45)
@@ -274,8 +274,29 @@ function create_graph(dir::String)
         addEdge(to_kh, 58, 55)
         addEdge(to_kh, 65, 60)
         addEdge(to_kh, 78, 77)
-        
-
+        #Implement edges from CPH to KH
+        addEdge(to_kh, 125, 117)
+        addEdge(to_kh, 117, 119)
+        addEdge(to_kh, 119, 120)
+        addEdge(to_kh, 120, 89)
+        addEdge(to_kh, 89, 84)
+        addEdge(to_kh, 119, 100)
+        addEdge(to_kh, 100, 94)
+        addEdge(to_kh, 94, 88)
+        addEdge(to_kh, 100, 63)
+        addEdge(to_kh, 63, 62) 
+        addEdge(to_kh, 63, 64)
+        addEdge(to_kh, 62, 49)
+        addEdge(to_kh, 49, 45)
+        addEdge(to_kh, 49, 26)
+        #Implement edges from Ny Ellebjerg/København Syd to KH
+        addEdge(to_kh, 121, 115)
+        addEdge(to_kh, 115, 114)
+        addEdge(to_kh, 114, 99)
+        addEdge(to_kh, 99, 98)
+        addEdge(to_kh, 98, 97)  
+        addEdge(to_kh, 97, 94)
+        addEdge(to_kh, 98, 62)
         return to_kh , 2
     else
         println("Error: Invalid direction.")
