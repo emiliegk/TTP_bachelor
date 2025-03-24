@@ -84,8 +84,9 @@ function id_op_path(T::Matrix{Int}, op_sol::Vector{Float64}, Omega::Vector{Any})
     num_paths = size(T, 2)
 
     #isolate the paths from omega
-    path_set = [i[1] for i in Omega]
-    t_id_set = [i[2] for i in Omega]
+    path_set = [i[2] for i in Omega]
+    t_id_set = [i[1] for i in Omega]
+    platform_set = [i[4] for i in Omega]
 
     println("Selected columns for each row in T:")
     for i in 1:num_trains
@@ -94,7 +95,8 @@ function id_op_path(T::Matrix{Int}, op_sol::Vector{Float64}, Omega::Vector{Any})
         if selected_column !== nothing
             path = path_set[selected_column]
             t_id = t_id_set[selected_column]
-            println("Train $t_id: Path $path is selected")
+            platform = platform_set[selected_column]
+            println("Train $t_id: Path $path is selected on platform $platform")
         else
             println("Row $i: No column selected")
         end

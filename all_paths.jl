@@ -165,8 +165,6 @@ function set_S(g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{V
         end
 
     
-
-    
     #Find all junctions in a graph
     jcts_to = find_all_jcts(g_to)
     jcts_from = find_all_jcts(g_from)
@@ -185,7 +183,7 @@ function set_S(g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{V
 end
 
 
-function train_time_mapping(df::Matrix{Any}, g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{Vector{Int64}}, Int64})
+function train_time_mapping(df::Matrix{Any})
     
     train_time_map = Dict{Int, Tuple{Dates.Time, Dates.Time}}()
 
@@ -202,49 +200,53 @@ function train_time_mapping(df::Matrix{Any}, g_to::Tuple{Vector{Vector{Int64}}, 
 end
 
 
-function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{Vector{Int64}}, Int64})
+function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any})
     #Initialize matrix 
     init_m = zeros(Int, length(S), length(Omega))
 
-    #isolate the paths from omega
-    path_set = [i[2] for i in Omega] # Convert the Set back to a Vector
+    #Extract junctions from omega
+    path_set_to = [i[3] for i in Omega]
+    platform_set = [i[4] for i in Omega]
+    path_set_from = [i[5] for i in Omega]
 
-    #Create mapping btw train id and departure time
-    train_time_map = train_time_mapping(df, g_to, g_from)
-    
     #Extract the junction from set_S
     jct_set = [j[1] for j in S]
     time_set = [j[2] for j in S]
 
+    #Create mapping btw train id, departure and arrival time
+    train_time_map = train_time_mapping(df)
 
+    #Go through each element in zero-matrix
     for r in 1:length(S)
         time = time_set[r] 
         for c in 1:length(Omega)
             train_id = Omega[c][1] #Find train ID for train
-            #print statement
+
+            #Extract arrival and departure time for train
             ar_time = train_time_map[train_id][1]
             dep_time = train_time_map[train_id][2]
-            
-            
-                       
-            #If a junction is in a path at a given time, change 0 to 1
-            if jct_set[r] in path_set[c] 
-                #=
-                println(move_time)
-                println(time)
-                println("")
-                =#
-                    #Currently, the junctions used by the trains are blocked for 3 minutes (departure time + 2 min)
-                    if (move_time <= time <= move_time + Dates.Minute(2) ) && graph[2] == 1
-                        init_m[r, c] = 1
-                    elseif (move_time - Dates.Minute(2) <= time <= move_time ) && graph[2] == 2
-                        init_m[r, c] = 1
-                        #
 
-                    end
+            #If jct is in the path to kh
+            if jct_set[r] in path_set_to[c]
+                if ar_time - Dates.Minute(2) <= time <= ar_time 
+                    init_m[r, c] = 1
+                end
+            
+            #If jct == platform
+            elseif jct_set[r] == platform_set[c]
+                if ar_time <= time <= dep_time + Dates.Minute(3) 
+                    init_m[r, c] = 1
+                end
+            #If jct in path from kh
+            elseif jct_set[r] in path_set_from[c]
+                if dep_time <= time <= dep_time + Dates.Minute(2)
+                    init_m[r, c] = 1
+                end
             end
+        
         end
     end
+         
     #=
     count = 0
     for i in 1:length(S)
@@ -255,11 +257,12 @@ function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any}, g_to::Tuple{
             println("Track ", count)
             println("----------------------------------")
         end
-        print(init_m[i,1])
-            
+        print(init_m[i,4000])
     end 
     
+    println(Omega[4000])
     =#
+    
     return init_m
 end
 
