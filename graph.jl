@@ -169,7 +169,13 @@ function create_graph(dir::String)
         addEdge(from_kh, 98, 99)
         addEdge(from_kh, 97, 98)
         addEdge(from_kh, 62, 98)
-
+        #Implement Workshop
+        addEdge(from_kh, 53, 56)
+        addEdge(from_kh, 57, 59)
+        addEdge(from_kh, 42, 59)
+        addEdge(from_kh, 59, 73)
+        addEdge(from_kh, 73, 74)
+    
         return from_kh,  1
     elseif dir == "to"
         to_kh = [Vector{Int}() for _ in 1:junct]  # Initialize adjacancy array from Nørreport
@@ -297,6 +303,13 @@ function create_graph(dir::String)
         addEdge(to_kh, 98, 97)  
         addEdge(to_kh, 97, 94)
         addEdge(to_kh, 98, 62)
+        #Implement Workshop
+        addEdge(to_kh, 74, 73)
+        addEdge(to_kh, 73, 59)
+        addEdge(to_kh, 59, 57)
+        addEdge(to_kh, 56, 53) 
+        addEdge(to_kh, 59, 42)
+
         return to_kh , 2
     else
         println("Error: Invalid direction.")

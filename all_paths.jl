@@ -58,8 +58,8 @@ function find_trains()
         
     # Corrected code
     cleaned_df = to_matrix
-    cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .|  (cleaned_df[:, 4] .== "Workshop") ), :]
-    cleaned_df = cleaned_df[1:end .!= 21, :]  # Keeps all rows except row 21
+    #cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .|  (cleaned_df[:, 4] .== "Workshop") ), :]
+    cleaned_df = cleaned_df[1:end .!= 24, :]  # Keeps all rows except row 24
 
     
 
@@ -94,10 +94,20 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     to_set = []
     for i in 1:size(df, 1)
         train_id = df[i, 2]  # train_id is in column 2
-        for dst_platform in 1:8  # All 8 platforms as possible destinations
-            paths_to = find_paths(to_graph, t_src_to[i][2], dst_platform, v)
-            for path in paths_to
-                push!(to_set, (train_id, path, dst_platform))
+        for dst_platform in 1:9  # All 8 platforms as possible destinations
+            if dst_platform == 9 && (df[i, 1] in ["IL", "L"] || df[i, 5] in ["IL", "L"])
+                continue
+            end
+            if t_src_to[i][2] == 74 
+                paths_to = find_paths(to_graph, t_src_to[i][2], dst_platform, v)
+                for path in paths_to
+                    push!(to_set, (train_id, path, dst_platform))
+                end
+            else
+                paths_to = find_paths(to_graph, t_src_to[i][2], dst_platform, v)
+                for path in paths_to
+                    push!(to_set, (train_id, path, dst_platform))
+                end
             end
         end
     end
@@ -106,7 +116,10 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     from_set = []
     for i in 1:size(df, 1)
         train_id = df[i, 2]  # train_id is in column 2
-        for src_platform in 1:8  # All 8 platforms as possible sources
+        for src_platform in 1:9  # All 9 platforms as possible sources
+            if scr_platform == 9 && (df[i, 1] in ["IL", "L"] || df[i, 5] in ["IL", "L"])
+                continue
+            end
             paths_from = find_paths(from_graph, src_platform, t_dst_from[i][2], v)
             for path in paths_from
                 push!(from_set, (train_id, path, src_platform))
@@ -230,7 +243,7 @@ function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any})
             
             #If jct == platform
             elseif jct_set[r] == platform_set[c]
-                if ar_time <= time <= dep_time + Dates.Minute(3) 
+                if ar_time <= time <= dep_time + Dates.Minute(2) 
                     init_m[r, c] = 1
                 end
             #If jct in path from kh
@@ -325,6 +338,8 @@ function allocate_t_src(g::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
                 push!(t_src, [df[i,2], 121])
             elseif df[i, 4] == "CPH Lufthavn"
                 push!(t_src, [df[i,2], 125])
+            elseif df[i, 4] == "Workshop"
+                push!(t_src, [df[i,2], 74])
             end
         end
     end
@@ -349,6 +364,8 @@ function allocate_t_dst(g::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
                 push!(t_dst, [df[i,6], 122])
             elseif df[i, 8] == "CPH Lufthavn"
                 push!(t_dst, [df[i,6], 126])
+            elseif df[i, 8] == "Workshop"
+                push!(t_dst, [df[i,6], 74])
             end
         end
     end
