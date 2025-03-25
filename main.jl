@@ -20,18 +20,32 @@ function main()
     junct = 128
     to_kh = create_graph("to") #initialize direction of graph
     from_kh = create_graph("from")
+    to_w = create_graph("to_w")
+    from_w = create_graph("from_w")
     df = find_trains()
     
 
     S = set_S(to_kh, from_kh, df)
-    o = omega(to_kh, from_kh, junct, df)
+    o = omega(to_kh, from_kh, to_w, from_w, junct, df)
+    for item in o
+        # Check if item is a tuple with at least 2 elements, 
+        # where the 2nd element is a vector with at least one element
+        if item isa Tuple && length(item) >= 2 &&
+           item[2] isa AbstractVector && !isempty(item[2]) &&
+           last(item[2]) == 59
+            println(item)
+            println()
+        end
+    end
+    
+    
    
 
-    R = mat_R(S, o, df)
-    T = mat_T(o, df)
+    #R = mat_R(S, o, df)
+    #T = mat_T(o, df)
     
-    x = set_packing(T, R)
-    id_op_path(T, x, o)
+    #x = set_packing(T, R)
+    #id_op_path(T, x, o)
 
 
     #= 

@@ -60,46 +60,31 @@ function find_trains()
     cleaned_df = to_matrix
     #cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .|  (cleaned_df[:, 4] .== "Workshop") ), :]
     cleaned_df = cleaned_df[1:end .!= 24, :]  # Keeps all rows except row 24
-
-    
-
-    #when all stations are implemented:
-    #cleaned_df =  coalesce.(to_matrix, "")
-
-    #println(to_kn_trains)
    
         
     return cleaned_df
 end
 
 #Function linking all possible paths for each train to a train id
-function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vector{Int}}, Int}, v::Int, df::Matrix{Any})
-    t_src_to = allocate_t_src(g_to, df)
-    t_dst_from = allocate_t_dst(g_from, df)
-
-#=
-    if g[2] == 1
-        trains = df[df[:, 8] .!= "", :]
-        train_ids = trains[:, 6]
-    elseif g[2] == 2
-        trains = df[df[:, 4] .!= "", :]
-        train_ids = trains[:, 2]
-
-    end=#
+function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vector{Int}}, Int}, g_to_w::Tuple{Vector{Vector{Int}}, Int}, g_from_w::Tuple{Vector{Vector{Int}}, Int}, v::Int, df::Matrix{Any})
+    t_src_to = allocate_t_src(df)
+    t_dst_from = allocate_t_dst(df)
     
     to_graph = g_to[1]
     from_graph = g_from[1]
+    to_w_graph = g_to_w[1]
+    from_w_graph = g_from_w[1]
 
     #Create ingoing possible paths with train ids
     to_set = []
     for i in 1:size(df, 1)
         train_id = df[i, 2]  # train_id is in column 2
-        for dst_platform in 1:9  # All 8 platforms as possible destinations
+        for dst_platform in 1:9  # All 9 platforms as possible destinations
             if dst_platform == 9 && (df[i, 1] in ["IL", "L"] || df[i, 5] in ["IL", "L"])
                 continue
             end
-            if t_src_to[i][2] == 74 
-                paths_to = find_paths(to_graph, t_src_to[i][2], dst_platform, v)
+            if t_src_to[i][2] == 59
+                paths_to = find_paths(to_w_graph, t_src_to[i][2], dst_platform, v)
                 for path in paths_to
                     push!(to_set, (train_id, path, dst_platform))
                 end
@@ -117,12 +102,19 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     for i in 1:size(df, 1)
         train_id = df[i, 2]  # train_id is in column 2
         for src_platform in 1:9  # All 9 platforms as possible sources
-            if scr_platform == 9 && (df[i, 1] in ["IL", "L"] || df[i, 5] in ["IL", "L"])
+            if src_platform == 9 && (df[i, 1] in ["IL", "L"] || df[i, 5] in ["IL", "L"])
                 continue
             end
-            paths_from = find_paths(from_graph, src_platform, t_dst_from[i][2], v)
-            for path in paths_from
-                push!(from_set, (train_id, path, src_platform))
+            if t_dst_from[i][2] == 59
+                paths_to = find_paths(from_w_graph, src_platform, t_dst_from[i][2], v)
+                for path in paths_to
+                    push!(to_set, (train_id, path, src_platform))
+                end
+            else
+                paths_from = find_paths(from_graph, src_platform, t_dst_from[i][2], v)
+                for path in paths_from
+                    push!(from_set, (train_id, path, src_platform))
+                end
             end
         end
     end
@@ -322,55 +314,41 @@ function not_visited(x::Int, path::Vector{Int})
     return 1
 end
 
-function allocate_t_src(g::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
+function allocate_t_src(df::Matrix{Any})
     t_src = []
-    if g[2] == 1 #If from_kh
-        for i in 1:size(df, 1)
-            push!(t_src, [df[i,6], i%8 + 1])
-        end
-    elseif g[2] == 2 #if to_kh
-        for i in 1:size(df, 1)
-            if df[i, 4] == "Nørreport"
-                push!(t_src, [df[i,2], 128])
-            elseif df[i, 4] == "Valby"
-                push!(t_src, [df[i,2], 123])
-            elseif df[i, 4] == "Ny Ellebjerg/København Syd"
-                push!(t_src, [df[i,2], 121])
-            elseif df[i, 4] == "CPH Lufthavn"
-                push!(t_src, [df[i,2], 125])
-            elseif df[i, 4] == "Workshop"
-                push!(t_src, [df[i,2], 74])
-            end
+    for i in 1:size(df, 1)
+        if df[i, 4] == "Nørreport"
+            push!(t_src, [df[i,2], 128])
+        elseif df[i, 4] == "Valby"
+            push!(t_src, [df[i,2], 123])
+        elseif df[i, 4] == "Ny Ellebjerg/København Syd"
+            push!(t_src, [df[i,2], 121])
+        elseif df[i, 4] == "CPH Lufthavn"
+            push!(t_src, [df[i,2], 125])
+        elseif df[i, 4] == "Workshop"
+            push!(t_src, [df[i,2], 59])
         end
     end
-
     
     return t_src
 end 
 
-function allocate_t_dst(g::Tuple{Vector{Vector{Int64}}, Int64}, df::Matrix{Any})
+function allocate_t_dst(df::Matrix{Any})
     t_dst = []
-    if g[2] == 2 #If to_kh
-        for i in 1:size(df, 1)
-            push!(t_dst, [df[i,2], i%8 + 1])
-        end
-    elseif g[2] == 1 #if from_kh
-        for i in 1:size(df, 1)
-            if df[i, 8] == "Nørreport"
-                push!(t_dst, [df[i,6], 127])
-            elseif df[i, 8] == "Valby"
-                push!(t_dst, [df[i,6], 124])
-            elseif df[i, 8] == "Ny Ellebjerg/København Syd"
-                push!(t_dst, [df[i,6], 122])
-            elseif df[i, 8] == "CPH Lufthavn"
-                push!(t_dst, [df[i,6], 126])
-            elseif df[i, 8] == "Workshop"
-                push!(t_dst, [df[i,6], 74])
-            end
+    for i in 1:size(df, 1)
+        if df[i, 8] == "Nørreport"
+            push!(t_dst, [df[i,6], 127])
+        elseif df[i, 8] == "Valby"
+            push!(t_dst, [df[i,6], 124])
+        elseif df[i, 8] == "Ny Ellebjerg/København Syd"
+            push!(t_dst, [df[i,6], 122])
+        elseif df[i, 8] == "CPH Lufthavn"
+            push!(t_dst, [df[i,6], 126])
+        elseif df[i, 8] == "Workshop"
+            push!(t_dst, [df[i,6], 59])
         end
     end
 
-    
     return t_dst
 
 end 
