@@ -55,16 +55,12 @@ function find_trains()
   
     #For now we are only interested in the trains going to Nørreport
     #This has to be changed later!!!!!
-    
-    cleaned_df = to_matrix[(to_matrix[:, 8] .== "Nørreport") .| (to_matrix[:, 4] .== "Nørreport") , :]
-    
+        
     # Corrected code
-    cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .| (cleaned_df[:, 8] .== "Ny Ellebjerg/København Syd") .| 
-                                (cleaned_df[:, 4] .== "Workshop") .| (cleaned_df[:, 4] .== "Ny Ellebjerg/København Syd") ), :]
+    cleaned_df = to_matrix
+    cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .|  (cleaned_df[:, 4] .== "Workshop") ), :]
+    cleaned_df = cleaned_df[1:end .!= 21, :]  # Keeps all rows except row 21
 
-
-
-   
     
 
     #when all stations are implemented:
@@ -159,7 +155,7 @@ function set_S(g_to::Tuple{Vector{Vector{Int64}}, Int64}, g_from::Tuple{Vector{V
         cur = min_time - Dates.Minute(2)
         min_count = []
 
-        while cur <= (max_time + Dates.Minute(2))
+        while cur <= (max_time + Dates.Minute(3))
             push!(min_count, cur)
             cur += Dates.Minute(1)
         end

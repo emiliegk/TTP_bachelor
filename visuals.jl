@@ -1,13 +1,12 @@
 using Pkg
 using DataStructures
 
-
 module visuals
 using DataFrames
 using XLSX
 using Dates
 using Plots
-export  create_swimlanes
+export create_swimlanes
 
 
 

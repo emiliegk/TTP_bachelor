@@ -21,19 +21,18 @@ function main()
     to_kh = create_graph("to") #initialize direction of graph
     from_kh = create_graph("from")
     df = find_trains()
-
     
 
     S = set_S(to_kh, from_kh, df)
     o = omega(to_kh, from_kh, junct, df)
-    
+   
 
     R = mat_R(S, o, df)
-    #T = mat_T(o, df)
+    T = mat_T(o, df)
     
-    #x = set_packing(T, R)
-    
-    #id_op_path(T, x, o)
+    x = set_packing(T, R)
+    id_op_path(T, x, o)
+
 
     #= 
     #Mock data (train ID, platform, start time in minutes, end time in minutes, color)
