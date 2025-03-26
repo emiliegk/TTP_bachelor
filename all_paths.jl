@@ -43,10 +43,10 @@ function find_trains()
         if ismissing(to_matrix[i, 8])
             to_matrix[i, 8] = "Workshop"
         end
+        # Replace both values with "col2col6"
         # Check if values in column 2 and column 6 are the same
         if to_matrix[i, 2] != to_matrix[i, 6]
-            # Replace both values with "col2col6"
-            new_value = (to_matrix[i, 2]) *  (to_matrix[i, 6])
+            new_value = parse(Int, string(to_matrix[i, 2]) * string(to_matrix[i, 6]))
             to_matrix[i, 2] = new_value
             to_matrix[i, 6] = new_value
         end
