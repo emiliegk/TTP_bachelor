@@ -106,9 +106,10 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
                 continue
             end
             if t_dst_from[i][2] == 59
+                
                 paths_to = find_paths(from_w_graph, src_platform, t_dst_from[i][2], v)
                 for path in paths_to
-                    push!(to_set, (train_id, path, src_platform))
+                    push!(from_set, (train_id, path, src_platform))
                 end
             else
                 paths_from = find_paths(from_graph, src_platform, t_dst_from[i][2], v)

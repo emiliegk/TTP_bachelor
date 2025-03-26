@@ -25,14 +25,13 @@ function main()
     df = find_trains()
     
 
-    S = set_S(to_kh, from_kh, df)
+    #S = set_S(to_kh, from_kh, df)
     o = omega(to_kh, from_kh, to_w, from_w, junct, df)
+    
     for item in o
         # Check if item is a tuple with at least 2 elements, 
         # where the 2nd element is a vector with at least one element
-        if item isa Tuple && length(item) >= 2 &&
-           item[2] isa AbstractVector && !isempty(item[2]) &&
-           last(item[2]) == 59
+        if last(item[2]) == 59
             println(item)
             println()
         end
