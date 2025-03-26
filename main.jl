@@ -23,30 +23,24 @@ function main()
     to_w = create_graph("to_w")
     from_w = create_graph("from_w")
     df = find_trains()
-    println(df)
-    println("")
+    #println(df)
+    #println("")
     
 
-    #=S = set_S(to_kh, from_kh, df)
+    S = set_S(to_kh, from_kh, df)
     o = omega(to_kh, from_kh, to_w, from_w, junct, df)
+
     
-    for item in o
-        # Check if item is a tuple with at least 2 elements, 
-        # where the 2nd element is a vector with at least one element
-        if last(item[2]) == 59
-            println(item)
-            println()
-        end
-    end=#
-    
+    seen = []
+   
     
    
 
-    #R = mat_R(S, o, df)
-    #T = mat_T(o, df)
+    R = mat_R(S, o, df)
+    T = mat_T(o, df)
     
-    #x = set_packing(T, R)
-    #id_op_path(T, x, o)
+    x = set_packing(T, R)
+    id_op_path(T, x, o)
 
 
     #= 
@@ -108,7 +102,7 @@ train_data = [
     create_swimlanes(train_data)
     =#
 
-en
+end
 
 main()
 

@@ -60,7 +60,7 @@ function find_trains()
     cleaned_df = to_matrix
     #cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .|  (cleaned_df[:, 4] .== "Workshop") ), :]
     cleaned_df = cleaned_df[1:end .!= 24, :]  # Keeps all rows except row 24
-   
+    cleaned_df = cleaned_df[1:end .!= 81, :]
         
     return cleaned_df
 end
