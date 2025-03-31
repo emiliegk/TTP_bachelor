@@ -2,17 +2,20 @@ using Pkg
 using DataStructures
 
 
+
 module optimization
 using DataFrames
 using XLSX
 using Dates
 using JuMP
 using GLPK
+using CSV
+using Dates
 
 #=include("all_paths.jl")
 using .All_paths=#
 
-export set_packing, id_op_path
+export set_packing, id_op_path, create_csv
 
 function set_packing(T::Matrix{Int64}, R::Matrix{Int64})
     #Number of trains, paths, and resources
@@ -88,6 +91,8 @@ function id_op_path(T::Matrix{Int}, op_sol::Vector{Float64}, Omega::Vector{Any})
     t_id_set = [i[1] for i in Omega]
     platform_set = [i[4] for i in Omega]
 
+    #result matrix
+    results = Matrix{Any}(undef, num_trains, 3)
     println("Selected columns for each row in T:")
     for i in 1:num_trains
         # Find the column index where x[j] == 1 for the current row
@@ -96,11 +101,69 @@ function id_op_path(T::Matrix{Int}, op_sol::Vector{Float64}, Omega::Vector{Any})
             path = path_set[selected_column]
             t_id = t_id_set[selected_column]
             platform = platform_set[selected_column]
+            results[i, :] = [t_id, path, platform]
             println("Train $t_id: Path $path is selected on platform $platform")
         else
             println("Row $i: No column selected")
         end
     end
+    results
+end
+
+function create_csv(df::Matrix{Any}, id_op_path::Matrix{Any})
+    # Create a dictionary for quick lookup of train information by ID
+    train_dict = Dict{Any, Tuple}()
+    for i in 1:size(df, 1)
+        train_id = df[i, 2]  # Train ID
+        departure_station = df[i, 4]  # Departure station (column 4)
+        arrival_station = df[i, 8]  # Arrival station (column 8)
+        arrival_time = df[i, 3]
+        departure_time = df[i, 7]
+        
+        # Determine direction
+        direction = if (departure_station in ["Workshop", "Nørreport"]) && 
+                       !(arrival_station in ["Workshop", "Nørreport"])
+            "mod_vest"
+        elseif (departure_station in ["Valby", "Ny Ellebjerg/København Syd", "Workshop", "CPH Lufthavn"]) &&
+               (arrival_station in ["Workshop", "Nørreport"])
+            "mod_kn"
+        else
+            "vender"
+        end
+        
+        # Add asterisk if Workshop is involved
+        marked_id = if "Workshop" in [departure_station, arrival_station]
+            string(train_id) * "*"
+        else
+            string(train_id)
+        end
+        
+        train_dict[train_id] = (marked_id, arrival_time, departure_time, direction)
+    end
+    
+    # Initialize output matrix with columns: id, path, platform, arrival, departure, direction
+    output_matrix = Matrix{Any}(undef, size(id_op_path, 1), 6)
+    
+    for i in 1:size(id_op_path, 1)
+        train_id = id_op_path[i, 1]
+        path = id_op_path[i, 2]
+        platform = id_op_path[i, 3]
+        
+        if haskey(train_dict, train_id)
+            marked_id, arrival, departure, direction = train_dict[train_id]
+            output_matrix[i, :] = [marked_id, path, platform, arrival, departure, direction]
+        else
+            output_matrix[i, :] = [train_id, path, platform, "UNKNOWN", "UNKNOWN", "UNKNOWN"]
+        end
+    end
+    
+    # Convert to DataFrame with column names
+    result_df = DataFrame(output_matrix, [:train_id, :path, :platform, :arrival_time, :departure_time, :direction])
+    
+    # Write to CSV file
+    CSV.write("train_schedule_with_paths.csv", result_df)
+    
+    return result_df
 end
         
 end
