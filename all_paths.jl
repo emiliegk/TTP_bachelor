@@ -141,12 +141,12 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         path_from = omega[5]
         
         for block_duration in 3:10
-            push!(expanded_omega, (train_id, path_to, platform, path_from, block_duration))
+            push!(expanded_omega, (train_id, path_to, path_from, platform, block_duration))
         end
     end
 
-    #=for i in 1:length(combined_paths)
-        if combined_paths[i][1] == 133
+   #= for i in 1:length(combined_paths)
+        if combined_paths[i][1] == 121
             println("")
             println(combined_paths[i])
             println("")
