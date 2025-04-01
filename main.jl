@@ -31,16 +31,15 @@ function main()
     o = omega(to_kh, from_kh, to_w, from_w, junct, df)
 
     
-    seen = []
-   
     
-   
 
     R = mat_R(S, o, df)
-    T = mat_T(o, df)
+    println(R[1365, :])
+    println("")
+    #T = mat_T(o, df)
     
-    x = set_packing(T, R)
-    id_op_path(T, x, o)
+    #x = set_packing(T, R)
+    #id_op_path(T, x, o)
 
 
     #= 
