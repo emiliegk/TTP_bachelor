@@ -132,6 +132,19 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         end
     end
 
+    # Create expanded Omega with block durations (3-10 minutes)
+    expanded_omega = []
+    for omega in combined_paths
+        train_id = omega[1]
+        path_to = omega[3]
+        platform = omega[4]
+        path_from = omega[5]
+        
+        for block_duration in 3:10
+            push!(expanded_omega, (train_id, path_to, platform, path_from, block_duration))
+        end
+    end
+
     #=for i in 1:length(combined_paths)
         if combined_paths[i][1] == 133
             println("")
@@ -140,7 +153,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         end
     end=#
 
-    return combined_paths
+    return expanded_omega
 end
 
 function find_all_jcts(g::Tuple{Vector{Vector{Int64}}, Int64})
@@ -276,32 +289,19 @@ end
     return init_m
 end=#
 
-function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any})
+function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
     # First filter S to only include platform-time combinations (platforms 1-9)
     jct_set = [j[1] for j in S]
     time_set = [j[2] for j in S]
     
-    # Create expanded Omega with block durations (3-10 minutes)
-    expanded_omega = []
-    for omega in Omega
-        train_id = omega[1]
-        path_to = omega[3]
-        platform = omega[4]
-        path_from = omega[5]
-        
-        for block_duration in 3:10
-            push!(expanded_omega, (train_id, path_to, platform, path_from, block_duration))
-        end
-    end
-    
     # Initialize matrix with correct dimensions
-    init_m = zeros(Int, length(S), length(expanded_omega))
+    init_m = zeros(Int, length(S), length(omega))
     
     # Create train time mapping
     train_time_map = train_time_mapping(df)
     
     # Process each train-path-duration combination (columns)
-    for (c, omega_exp) in enumerate(expanded_omega)
+    for (c, omega_exp) in enumerate(omega)
         train_id, path_to, platform, path_from, block_duration = omega_exp
         
         # Get train times
@@ -313,7 +313,7 @@ function mat_R(S::Vector{Any}, Omega::Vector{Any}, df::Matrix{Any})
         platform_end = dep_time + Dates.Minute(block_duration)
         
         # Process each platform-time combination (rows)
-        for (r, (jct, time)) in enumerate(zip(jct_set, time_set))
+        for (r, (jct, time)) in enumerate(S)
             # If junction is in path to platform
             if jct in path_to
                 if ar_time - Dates.Minute(2) <= time <= ar_time 
