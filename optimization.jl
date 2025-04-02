@@ -17,11 +17,12 @@ using .All_paths=#
 
 export set_packing, id_op_path, create_csv
 
-function set_packing(T::Matrix{Int8}, R::Matrix{Int8})
+function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
     #Number of trains, paths, and resources
     num_trains = size(T, 1)
     num_paths = size(T, 2)
     num_resources = size(R, 1)
+    punishment = [o[7] for o in omega]
 
     # Create a model
     model = Model(GLPK.Optimizer)
@@ -30,7 +31,7 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8})
     @variable(model, x[1:num_paths], Bin)
 
     # Objective function: maximize the sum of selected paths (since rho is 1)
-    @objective(model, Max, sum(x))
+    @objective(model, Min, punishment' * x)
 
      # Constraint: each resource can be used by at most one path
      for s in 1:num_resources

@@ -18,9 +18,9 @@ df['departure_time'] = pd.to_datetime(today + ' ' + df['departure_time'])
 
 # Define time intervals
 time_ranges = [
-    ('05:55:00', '06:59:00'),
-    ('07:00:00', '07:59:00'),
-    ('08:00:00', '09:05:00')
+    ('05:55:00', '06:55:00'),
+    ('06:55:00', '07:55:00'),
+    ('07:55:00', '09:05:00')
 ]
 
 # Define a consistent start time for the grid lines (e.g., 05:55:00)
@@ -30,7 +30,7 @@ five_minutes_ms = 5 * 60 * 1000
 # Create subplots
 fig = make_subplots(
     rows=3, cols=1,
-    subplot_titles=["5:55-6:59", "7:00-7:59", "8:00-9:05"],
+    subplot_titles=["5:55-6:55", "6:55-7:55", "7:55-9:05"],
     vertical_spacing=0.1,
     shared_yaxes=True,
     row_heights=[0.33, 0.33, 0.34]
@@ -135,4 +135,4 @@ fig.update_layout(
     hovermode='closest'
 )
 
-fig.write_image("train_occupancy_gantt_2min_lines_5min_labels.png", scale=2)
+fig.write_image("train_occupancy_swimlane.png", scale=2)

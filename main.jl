@@ -30,7 +30,7 @@ function main()
     R = mat_R(S, o, df)
     T = mat_T(o, df)
     
-    x = set_packing(T, R)
+   x = set_packing(T, R, o)
     opt = id_op_path(T, x, o)
 
 
