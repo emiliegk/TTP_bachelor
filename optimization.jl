@@ -14,7 +14,7 @@ using .All_paths=#
 
 export set_packing, id_op_path
 
-function set_packing(T::Matrix{Int64}, R::Matrix{Int64})
+function set_packing(T::Matrix{Int8}, R::Matrix{Int8})
     #Number of trains, paths, and resources
     num_trains = size(T, 1)
     num_paths = size(T, 2)
@@ -79,7 +79,7 @@ end
 
 
 
-function id_op_path(T::Matrix{Int}, op_sol::Vector{Float64}, Omega::Vector{Any})
+function id_op_path(T::Matrix{Int8}, op_sol::Vector{Float64}, Omega::Vector{Any})
     num_trains = size(T, 1)
     num_paths = size(T, 2)
 

@@ -136,12 +136,14 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     expanded_omega = []
     for omega in combined_paths
         train_id = omega[1]
+        combined_paths = omega[2]
         path_to = omega[3]
         platform = omega[4]
         path_from = omega[5]
         
-        for block_duration in 3:10
-            push!(expanded_omega, (train_id, path_to, path_from, platform, block_duration))
+        for buffer in 3:7
+            punishment = exp(-4/5*buffer)*10000
+            push!(expanded_omega, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
         end
     end
 
@@ -291,18 +293,18 @@ end=#
 
 function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
     # First filter S to only include platform-time combinations (platforms 1-9)
-    jct_set = [j[1] for j in S]
-    time_set = [j[2] for j in S]
+    #=jct_set = [j[1] for j in S]
+    time_set = [j[2] for j in S]=#
     
     # Initialize matrix with correct dimensions
-    init_m = zeros(Int, length(S), length(omega))
+    init_m = zeros(Int8, length(S), length(omega))
     
     # Create train time mapping
     train_time_map = train_time_mapping(df)
     
     # Process each train-path-duration combination (columns)
     for (c, omega_exp) in enumerate(omega)
-        train_id, path_to, platform, path_from, block_duration = omega_exp
+        train_id, path, path_to, platform, path_from, block_duration, punishment = omega_exp
         
         # Get train times
         ar_time = train_time_map[train_id][1]
@@ -346,7 +348,7 @@ function mat_T(Omega::Vector{Any}, df::Matrix{Any})
     
 
     #initialize matrix
-    init_m = zeros(Int, length(train_ids), length(Omega))
+    init_m = zeros(Int8, length(train_ids), length(Omega))
 
     #Assign 1 if train_id is same in column and omega
     for i in 1:length(train_ids)
