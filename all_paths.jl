@@ -141,7 +141,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         platform = omega[4]
         path_from = omega[5]
         
-        for buffer in 3:7
+        for buffer in 3
             punishment = exp(-4/5*buffer)*10000
             if platform == 9
                 punishment += 200
