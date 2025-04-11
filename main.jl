@@ -26,11 +26,15 @@ function main()
 
     S = set_S(to_kh, from_kh, df)
     o = omega(to_kh, from_kh, to_w, from_w, junct, df)  
+    
 
     R = mat_R(S, o, df)
     T = mat_T(o, df)
-    
-   x = set_packing(T, R, o)
+   
+    t1 = time()
+    x = set_packing(T, R, o)
+    elapsed_time = time() - t1
+    println("Elapsed time: ", elapsed_time, " seconds")
     opt = id_op_path(T, x, o)
 
 

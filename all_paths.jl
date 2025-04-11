@@ -132,7 +132,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         end
     end
 
-    # Create expanded Omega with block durations (3-10 minutes)
+    # Create expanded Omega with block durations (3-7 minutes)
     expanded_omega = []
     for omega in combined_paths
         train_id = omega[1]
@@ -141,7 +141,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         platform = omega[4]
         path_from = omega[5]
         
-        for buffer in 3:7
+        for buffer in 3:10
             punishment = exp(-4/5*buffer)*10000
             if platform == 9
                 punishment += 200

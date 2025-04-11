@@ -2,15 +2,14 @@ using Pkg
 using DataStructures
 
 
-
 module optimization
 using DataFrames
 using XLSX
-using Dates
 using JuMP
-using GLPK
+using Gurobi
 using CSV
 using Dates
+using SparseArrays
 
 #=include("all_paths.jl")
 using .All_paths=#
@@ -18,6 +17,9 @@ using .All_paths=#
 export set_packing, id_op_path, create_csv
 
 function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
+    T = sparse(T)
+    R = sparse(R)
+
     #Number of trains, paths, and resources
     num_trains = size(T, 1)
     num_paths = size(T, 2)
@@ -25,15 +27,15 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
     punishment = [o[7] for o in omega]
 
     # Create a model
-    model = Model(GLPK.Optimizer)
+    model = Model(Gurobi.Optimizer)
 
     # Define the binary decision variable x
     @variable(model, x[1:num_paths], Bin)
 
-    # Objective function: maximize the sum of selected paths (since rho is 1)
+    # Objective function: minimize the sum of selected paths (since rho is 1)
     @objective(model, Min, punishment' * x)
 
-     # Constraint: each resource can be used by at most one path
+     #=# Constraint: each resource can be used by at most one path
      for s in 1:num_resources
         @constraint(model, sum(R[s, j] * x[j] for j in 1:num_paths) <= 1)
     end
@@ -41,9 +43,19 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
     # Constraint: each train must have exactly one path
     for i in 1:num_trains
         @constraint(model, sum(T[i, j] * x[j] for j in 1:num_paths) == 1)
+    end=#
+
+    for s in 1:num_resources
+        cols = findnz(R[s, :])[1]
+        if !isempty(cols)
+            @constraint(model, sum(x[j] for j in cols) <= 1)
+        end
     end
 
-   
+    for i in 1:num_trains
+        cols = findnz(T[i, :])[1]
+        @constraint(model, sum(x[j] for j in cols) == 1)
+    end
 
     # Solve the model
     optimize!(model)
