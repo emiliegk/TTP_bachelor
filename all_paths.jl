@@ -1,12 +1,12 @@
 using Pkg
 using DataStructures
 
-
 module All_paths
 using DataFrames
 using XLSX
 using Dates
-export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
+using Statistics
+export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst, paths_analyze
 
 #Finds trains to Nørreport
 function find_trains() 
@@ -64,6 +64,7 @@ function find_trains()
         
     return cleaned_df
 end
+
 
 #Function linking all possible paths for each train to a train id
 function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vector{Int}}, Int}, g_to_w::Tuple{Vector{Vector{Int}}, Int}, g_from_w::Tuple{Vector{Vector{Int}}, Int}, v::Int, df::Matrix{Any})
@@ -132,7 +133,8 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         end
     end
 
-    # Create expanded Omega with block durations (3-10 minutes)
+
+    # Create expanded Omega with block durations (3-7 minutes)
     expanded_omega = []
     for omega in combined_paths
         train_id = omega[1]
@@ -141,8 +143,13 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         platform = omega[4]
         path_from = omega[5]
         
-        for buffer in 3:7
+        for buffer in 3:10
             punishment = exp(-4/5*buffer)*10000
+            if platform == 9
+                punishment += 200
+            end
+            # Punishment for the path length
+            punishment += 5 * length(combined_paths)
             push!(expanded_omega, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
         end
     end
@@ -225,6 +232,8 @@ function train_time_mapping(df::Matrix{Any})
 end
 
 
+
+
 function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
     # First filter S to only include platform-time combinations (platforms 1-9)
     #=jct_set = [j[1] for j in S]
@@ -258,7 +267,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             
             # If junction is the platform
             elseif jct == platform
-                if platform_start <= time <= platform_end
+                if platform_start <= time < platform_end
                     init_m[r, c] = 1
                 end
             
