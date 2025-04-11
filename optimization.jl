@@ -30,48 +30,21 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
 
     # Create a model
     model = Model(Gurobi.Optimizer)
+    set_optimizer_attribute(model, "Presolve", 2)
 
     # Define the binary decision variable x
     @variable(model, x[1:num_paths], Bin)
-#=
-    # Objective function: maximize the sum of selected paths (since rho is 1)
-    @objective(model, Min, punishment' * x)
 
-     # Constraint: each resource can be used by at most one path
-    for s in 1:num_resources
-        @constraint(model, sum(R[s, j] * x[j] for j in 1:num_paths) <= 1)
-    end
 
-    # Constraint: each train must have exactly one path
-    for i in 1:num_trains
-        @constraint(model, sum(T[i, j] * x[j] for j in 1:num_paths) == 1)
-    end=#
-
-    for s in 1:num_resources
-        cols = findnz(R[s, :])[1]
-        if !isempty(cols)
-            @constraint(model, sum(x[j] for j in cols) <= 1)
-        end
-    end
 
     # Objective function: minimize the sum of punishments for selected paths
     @objective(model, Min, punishment' * x)
 
     # Constraint: each resource can be used by at most one path
-    for s in 1:num_resources
-        # Get the nonzero indices in row s of R_sparse
-        cols = findnz(R[s, :])[1]  # Indices where R_sparse[s, j] != 0
-        if !isempty(cols)
-            @constraint(model, sum(x[j] for j in cols) <= 1)
-        end
-    end
+    @constraint(model, R * x .<= 1)  # Note the dot (.) for broadcasting
 
     # Constraint: each train must have exactly one path
-    for i in 1:num_trains
-        # Get the nonzero indices in row i of T_sparse
-        cols = findnz(T[i, :])[1]  # Indices where T_sparse[i, j] != 0
-        @constraint(model, sum(x[j] for j in cols) == 1)
-    end
+    @constraint(model, T * x .== 1)
 
 
     # Solve the model

@@ -5,8 +5,8 @@ module All_paths
 using DataFrames
 using XLSX
 using Dates
-using Statistics
-export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst, paths_analyze
+using SparseArrays
+export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
 function find_trains() 
@@ -59,8 +59,8 @@ function find_trains()
     # Corrected code
     cleaned_df = to_matrix
     #cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .|  (cleaned_df[:, 4] .== "Workshop") ), :]
-    cleaned_df = cleaned_df[1:end .!= 24, :]  # Keeps all rows except row 24
-    cleaned_df = cleaned_df[1:end .!= 81, :]
+    #cleaned_df = cleaned_df[1:end .!= 24, :]  # Keeps all rows except row 24
+    #cleaned_df = cleaned_df[1:end .!= 81, :]
         
     return cleaned_df
 end
@@ -154,6 +154,23 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         end
     end
 
+    #Create NULL paths
+    null_array = []
+    
+    combined_paths = []
+    path_to = []
+    platform = []
+    path_from = []
+    buffer = 0
+    punishment = 5000
+
+    for i in 1:size(df, 1)
+        train_id = df[i, 2]
+        push!(null_array, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
+    end
+
+    final_omega = vcat(null_array, expanded_omega)
+
    #= for i in 1:length(combined_paths)
         if combined_paths[i][1] == 121
             println("")
@@ -162,7 +179,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         end
     end=#
 
-    return expanded_omega
+    return final_omega
 end
 
 function find_all_jcts(g::Tuple{Vector{Vector{Int64}}, Int64})
@@ -264,15 +281,15 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                 if ar_time - Dates.Minute(2) <= time <= ar_time 
                     init_m[r, c] = 1
                 end
-            
+            end
             # If junction is the platform
-            elseif jct == platform
+            if jct == platform
                 if platform_start <= time < platform_end
                     init_m[r, c] = 1
                 end
-            
+            end
             # If junction is in path from platform
-            elseif jct in path_from
+            if jct in path_from
                 if dep_time <= time <= dep_time + Dates.Minute(2)
                     init_m[r, c] = 1
                 end
