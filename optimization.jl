@@ -53,7 +53,7 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
             @constraint(model, sum(x[j] for j in cols) <= 1)
         end
     end
-=#
+
     # Objective function: minimize the sum of punishments for selected paths
     @objective(model, Min, punishment' * x)
 
