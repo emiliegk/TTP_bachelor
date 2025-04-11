@@ -278,15 +278,15 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                 if ar_time - Dates.Minute(2) <= time <= ar_time 
                     init_m[r, c] = 1
                 end
-            
+            end
             # If junction is the platform
-            elseif jct == platform
-                if platform_start <= time < platform_end
+            if jct == platform
+                if platform_start <= time <= platform_end
                     init_m[r, c] = 1
                 end
-            
+            end
             # If junction is in path from platform
-            elseif jct in path_from
+            if jct in path_from
                 if dep_time <= time <= dep_time + Dates.Minute(2)
                     init_m[r, c] = 1
                 end
