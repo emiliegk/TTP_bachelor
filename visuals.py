@@ -135,4 +135,4 @@ fig.update_layout(
     hovermode='closest'
 )
 
-fig.write_image("train_occupancy_swimlane.png", scale=2)
+fig.write_image("train_occupancy_swimlane_with_5.png", scale=2)

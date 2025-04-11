@@ -17,26 +17,28 @@ using .All_paths=#
 export set_packing, id_op_path, create_csv
 
 function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
+    #Convert T and R to sparse matrices
     T = sparse(T)
     R = sparse(R)
-
+    
     #Number of trains, paths, and resources
     num_trains = size(T, 1)
     num_paths = size(T, 2)
     num_resources = size(R, 1)
     punishment = [o[7] for o in omega]
+    
 
     # Create a model
     model = Model(Gurobi.Optimizer)
 
     # Define the binary decision variable x
     @variable(model, x[1:num_paths], Bin)
-
-    # Objective function: minimize the sum of selected paths (since rho is 1)
+#=
+    # Objective function: maximize the sum of selected paths (since rho is 1)
     @objective(model, Min, punishment' * x)
 
-     #=# Constraint: each resource can be used by at most one path
-     for s in 1:num_resources
+     # Constraint: each resource can be used by at most one path
+    for s in 1:num_resources
         @constraint(model, sum(R[s, j] * x[j] for j in 1:num_paths) <= 1)
     end
 
@@ -51,11 +53,26 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
             @constraint(model, sum(x[j] for j in cols) <= 1)
         end
     end
+=#
+    # Objective function: minimize the sum of punishments for selected paths
+    @objective(model, Min, punishment' * x)
 
+    # Constraint: each resource can be used by at most one path
+    for s in 1:num_resources
+        # Get the nonzero indices in row s of R_sparse
+        cols = findnz(R[s, :])[1]  # Indices where R_sparse[s, j] != 0
+        if !isempty(cols)
+            @constraint(model, sum(x[j] for j in cols) <= 1)
+        end
+    end
+
+    # Constraint: each train must have exactly one path
     for i in 1:num_trains
-        cols = findnz(T[i, :])[1]
+        # Get the nonzero indices in row i of T_sparse
+        cols = findnz(T[i, :])[1]  # Indices where T_sparse[i, j] != 0
         @constraint(model, sum(x[j] for j in cols) == 1)
     end
+
 
     # Solve the model
     optimize!(model)
