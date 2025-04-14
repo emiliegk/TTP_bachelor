@@ -2,7 +2,7 @@ using Pkg
 # Add if you don't have the package: Pkg.add("DataStructures") 
 using DataStructures
 using XLSX
-
+using HiGHS
 
 include("graph.jl") 
 using .Graph
