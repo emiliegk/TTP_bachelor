@@ -4,12 +4,13 @@ from plotly.subplots import make_subplots
 
 # Read and prepare data
 df = pd.read_csv('train_schedule_with_paths.csv')
+df = df[df['platform'] != 'Any[]']
 df['platform'] = df['platform'].astype(str)
 df.loc[df['platform'] == '9', 'platform'] = '26'
 df['platform'] = 'Platform ' + df['platform']
 
 # Define the desired platform order
-platform_labels_ordered = [f'Platform {i}' for i in range(1, 9)] + ['Platform 26']
+platform_labels_ordered = [f'Platform {i}' for i in range(1, 9)] + ['Platform 26'] 
 
 # Convert times
 today = pd.to_datetime('today').strftime('%Y-%m-%d')
@@ -135,4 +136,4 @@ fig.update_layout(
     hovermode='closest'
 )
 
-fig.write_image("train_occupancy_swimlane_with_5.png", scale=2)
+fig.write_image("train_occupancy_swimlane_with_null_punishment.png", scale=2)

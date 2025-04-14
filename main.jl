@@ -26,7 +26,7 @@ function main()
     
     S = set_S(to_kh, from_kh, df)
     o = omega(to_kh, from_kh, to_w, from_w, junct, df) 
-    
+
     
     R = mat_R(S, o, df)
     T = mat_T(o, df)

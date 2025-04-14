@@ -1,7 +1,6 @@
 using Pkg
 using DataStructures
 
-
 module All_paths
 using DataFrames
 using XLSX
@@ -65,6 +64,7 @@ function find_trains()
         
     return cleaned_df
 end
+
 
 #Function linking all possible paths for each train to a train id
 function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vector{Int}}, Int}, g_to_w::Tuple{Vector{Vector{Int}}, Int}, g_from_w::Tuple{Vector{Vector{Int}}, Int}, v::Int, df::Matrix{Any})
@@ -133,6 +133,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         end
     end
 
+
     # Create expanded Omega with block durations (3-7 minutes)
     expanded_omega = []
     for omega in combined_paths
@@ -147,6 +148,8 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
             if platform == 9
                 punishment += 200
             end
+            # Punishment for the path length
+            punishment += 5 * length(combined_paths)
             push!(expanded_omega, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
         end
     end
