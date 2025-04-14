@@ -76,6 +76,12 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     to_w_graph = g_to_w[1]
     from_w_graph = g_from_w[1]
 
+    #junctions at a 1 km distance from Kn
+    zone_kh = [87, 84, 86, 92, 63, 98, 95]
+    zone_val = [92, 104]
+    zone_ny = [115, 116]
+    zone_cph  =  [119, 120]
+
     #Create ingoing possible paths with train ids
     to_set = []
     for i in 1:size(df, 1)
@@ -127,11 +133,51 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     for (train_id_to, path_to, dst_platform) in to_set
         for (train_id_from, path_from, src_platform) in from_set
             if train_id_to == train_id_from && dst_platform == src_platform
+
                 combined_path = vcat(path_to, path_from[2:end])  # Avoid duplicating the platform
-                push!(combined_paths, (train_id_to, combined_path, path_to[1:end-1], path_to[end], path_from[2:end]))
+
+                #To_kh divide paths into zones
+                count = 1
+                src_zone_to = Int[]
+                to_south = vcat(zone_val, zone_ny, zone_cph)
+                while count ≤ length(path_to)
+                    push!(src_zone_to, path_to[count])
+                    if path_to[count] ∈ to_south
+                        break
+                    end
+                    count += 1
+                end
+                
+
+                mid_zone_to = Int[]
+                count += 1
+                while (count) ≤ length(path_to)
+                    push!(mid_zone_to, path_to[count])
+                    if path_to[count] ∈ zone_kh
+                        break
+                    end
+                    count += 1
+                end
+                count += 1
+
+                end_zone_to = Int[]
+                for i in count:(length(path_to)-1)
+                    push!(end_zone_to, path_to[i])
+                end
+
+                #from_kh divide paths into zones
+
+
+
+                push!(combined_paths, (train_id_to, combined_path, src_zone_to, mid_zone_to, end_zone_to, path_to[end], path_from[2:end]))
             end
         end
+        
     end
+    println(combined_paths[1000])
+ 
+       
+    
 
 
     # Create expanded Omega with block durations (3-7 minutes)
@@ -142,7 +188,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         path_to = omega[3]
         platform = omega[4]
         path_from = omega[5]
-        
+
         for buffer in 3
             punishment = exp(-4/5*buffer)*10000
             if platform == 9
