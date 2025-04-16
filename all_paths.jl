@@ -84,6 +84,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
 
     #Create ingoing possible paths with train ids
     to_set = []
+
     for i in 1:size(df, 1)
         train_id = df[i, 2]  # train_id is in column 2
         for dst_platform in 1:9  # All 9 platforms as possible destinations
@@ -141,15 +142,22 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
                 src_zone_to = Int[]
                 to_south = vcat(zone_val, zone_ny, zone_cph)
                 while count ≤ length(path_to)
+                    if path_to[1] == 128
+                        count -=1
+                        break
+                    end
                     push!(src_zone_to, path_to[count])
                     if path_to[count] ∈ to_south
-                        break
+                        if path_to[count+1] ∉ to_south
+                            break
+                        end
                     end
                     count += 1
                 end
                 
 
                 mid_zone_to = Int[]
+
                 count += 1
                 while (count) ≤ length(path_to)
                     push!(mid_zone_to, path_to[count])
@@ -157,6 +165,9 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
                         break
                     end
                     count += 1
+                    if path_to[1] == 128 && count == length(path_to)
+                        break
+                    end
                 end
                 count += 1
 
@@ -167,27 +178,61 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
 
                 #from_kh divide paths into zones
 
+                count = 1
+                src_zone_from = Int[]
+                while count ≤ length(path_from)
+                    if path_from[end] == 127
+                        count -=1
+                        break
+                    end
+                    push!(src_zone_from, path_from[count])
+                    if path_from[count] ∈ zone_kh
+                        if path_from[count+1] ∉ zone_kh
+                            break
+                        end
+                    end
+                    count += 1
+                end
+                
 
+                mid_zone_from = Int[]
+                count += 1
+                while (count) ≤ length(path_from)
+                    if path_from[end] == 127 && count == 1
+                        count +=1
+                    end
+                    push!(mid_zone_from, path_from[count])
+                    if path_from[count] ∈ to_south
+                        break
+                    end
+                    count += 1
+                end
+                count += 1
 
-                push!(combined_paths, (train_id_to, combined_path, src_zone_to, mid_zone_to, end_zone_to, path_to[end], path_from[2:end]))
+                end_zone_from = Int[]
+                for i in count:(length(path_from))
+                    push!(end_zone_from, path_from[i])
+                end
+
+                push!(combined_paths, (train_id_to, combined_path, src_zone_to, mid_zone_to, end_zone_to, path_to[end], src_zone_from[2:end], mid_zone_from, end_zone_from))
             end
         end
         
     end
-    println(combined_paths[1000])
- 
        
-    
-
 
     # Create expanded Omega with block durations (3-7 minutes)
     expanded_omega = []
     for omega in combined_paths
         train_id = omega[1]
         combined_paths = omega[2]
-        path_to = omega[3]
-        platform = omega[4]
-        path_from = omega[5]
+        path_to_start = omega[3]
+        path_to_mid = omega[4]
+        path_to_end = omega[5]
+        platform = omega[6]
+        path_from_start = omega[7]
+        path_from_mid = omega[8]
+        path_from_end = omega[9]
 
         for buffer in 3
             punishment = exp(-4/5*buffer)*10000
@@ -196,27 +241,29 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
             end
             # Punishment for the path length
             punishment += 5 * length(combined_paths)
-            push!(expanded_omega, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
+            push!(expanded_omega, (train_id, combined_paths, path_to_start, path_to_mid, path_to_end, platform, path_from_start, path_from_mid, path_from_end, buffer, punishment))
         end
     end
-
     #Create NULL paths
     null_array = []
     
     combined_paths = []
-    path_to = []
+    path_to_start = []
+    path_to_mid = []
+    path_to_end = []
     platform = []
-    path_from = []
+    path_from_start = []
+    path_from_mid = []
+    path_from_end = []
     buffer = 0
-    punishment = 5000
+    punishment = 10000
 
     for i in 1:size(df, 1)
         train_id = df[i, 2]
-        push!(null_array, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
+        push!(null_array, (train_id, combined_paths, path_to_start, path_to_mid, path_to_end, platform, path_from_start, path_from_mid, path_from_end, buffer, punishment))
     end
 
     final_omega = vcat(null_array, expanded_omega)
-
    #= for i in 1:length(combined_paths)
         if combined_paths[i][1] == 121
             println("")
@@ -310,7 +357,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
     
     # Process each train-path-duration combination (columns)
     for (c, omega_exp) in enumerate(omega)
-        train_id, path, path_to, platform, path_from, block_duration, punishment = omega_exp
+        train_id, path, path_to_start, path_to_mid, platform, path_from_start, path_from_mid, path_from_end, block_duration, punishment = omega_exp
         
         # Get train times
         ar_time = train_time_map[train_id][1]
@@ -323,11 +370,27 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
         # Process each platform-time combination (rows)
         for (r, (jct, time)) in enumerate(S)
             # If junction is in path to platform
-            if jct in path_to
-                if ar_time - Dates.Minute(2) <= time <= ar_time 
+            #src_zone with 30 km/hr
+            if jct in path_to_start
+                if ar_time - Dates.Minute(1) <= time <= ar_time 
                     init_m[r, c] = 1
                 end
             end
+
+            #Mid_zone with 70 km/hr
+            if jct in path_to_mid
+                if ar_time - Dates.Minute(1) <= time <= ar_time + Dates.Minute(2)
+                    init_m[r, c] = 1
+                end
+            end
+
+            #end_zone with 30 km/hr
+            if jct in path_to_end
+                if ar_time - Dates.Minute(2) <= time < ar_time 
+                    init_m[r, c] = 1
+                end
+            end
+
             # If junction is the platform
             if jct == platform
                 if platform_start <= time < platform_end
