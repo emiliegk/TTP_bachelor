@@ -357,7 +357,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
     
     # Process each train-path-duration combination (columns)
     for (c, omega_exp) in enumerate(omega)
-        train_id, path, path_to_start, path_to_mid, platform, path_from_start, path_from_mid, path_from_end, block_duration, punishment = omega_exp
+        train_id, path, path_to_start, path_to_mid, path_to_end, platform, path_from_start, path_from_mid, path_from_end, block_duration, punishment = omega_exp
         
         # Get train times
         ar_time = train_time_map[train_id][1]
@@ -370,24 +370,85 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
         # Process each platform-time combination (rows)
         for (r, (jct, time)) in enumerate(S)
             # If junction is in path to platform
-            #src_zone with 30 km/hr
-            if jct in path_to_start
-                if ar_time - Dates.Minute(1) <= time <= ar_time 
-                    init_m[r, c] = 1
-                end
-            end
+            
 
-            #Mid_zone with 70 km/hr
-            if jct in path_to_mid
-                if ar_time - Dates.Minute(1) <= time <= ar_time + Dates.Minute(2)
-                    init_m[r, c] = 1
+            #If starting from København Syd or Nørreport
+            if path == []
+                continue
+            elseif path[1] == 59
+                if jct in path_to_start || jct in path_to_mid || jct in path_to_end
+                    if ar_time - Dates.Minute(2) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
                 end
-            end
 
-            #end_zone with 30 km/hr
-            if jct in path_to_end
-                if ar_time - Dates.Minute(2) <= time < ar_time 
-                    init_m[r, c] = 1
+            elseif path[1] == 128 || path[1] == 121
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(7) <= time < ar_time - Dates.Minute(5)
+                        init_m[r, c] = 1
+                    end
+                end
+    
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(7) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+    
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(7) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
+            
+            #If starting from Valby
+            elseif path[1] == 123
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(6) <= time < ar_time - Dates.Minute(4)
+                        init_m[r, c] = 1
+                    end
+                end
+    
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(6) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+    
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(6) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
+            
+
+            #If starting from CPH Airport
+            elseif path[1] == 125
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(10)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(12) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
                 end
             end
 
@@ -397,15 +458,72 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     init_m[r, c] = 1
                 end
             end
+
             # If junction is in path from platform
-            if jct in path_from
-                if dep_time <= time <= dep_time + Dates.Minute(2)
-                    init_m[r, c] = 1
+            #If Ending at København Syd or Nørreport
+            if path == []
+                continue
+            elseif path[end] == 59
+                if jct in path_from_start || jct in path_from_mid || jct in path_from_end
+                    if dep_time <= time < dep_time + Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+            elseif path[end] == 122 || path[end] == 127
+                if jct in path_from_start
+                    if dep_time <= time < dep_time + Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_mid
+                    if dep_time <= time < dep_time + Dates.Minute(5)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_end
+                    if dep_time <= time < dep_time + Dates.Minute(7)
+                        init_m[r, c] = 1
+                    end
+                end
+            #Valby
+            elseif path_from_end[end] == 124
+                if jct in path_from_start
+                    if dep_time <= time < dep_time + Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_mid
+                    if dep_time <= time < dep_time + Dates.Minute(4)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_end
+                    if dep_time <= time < dep_time + Dates.Minute(6)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #CPH Airport
+            elseif path_from_end[end] == 126
+                if jct in path_from_start
+                    if dep_time <= time < dep_time + Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_mid
+                    if dep_time <= time < dep_time + Dates.Minute(10)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_end
+                    if dep_time <= time < dep_time + Dates.Minute(12)
+                        init_m[r, c] = 1
+                    end
                 end
             end
         end
     end
-    
+    #println( init_m[:, 150])
     # Return both the matrix and column info for reference
     return  init_m
 end
@@ -438,8 +556,6 @@ function mat_T(Omega::Vector{Any}, df::Matrix{Any})
             println("")
         end
     end=#
-    
-
     return init_m
 end
 
