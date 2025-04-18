@@ -381,7 +381,11 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-
+            
+            #=
+            ###############
+            #Blocking full route from beginning
+            ###############
             elseif path[1] == 128 || path[1] == 121
                 #src_zone with 30 km/hr
                 if jct in path_to_start
@@ -451,6 +455,156 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             end
+            =#
+
+            #=
+            ###############
+            #Blocking 2/3 of the route
+            ###############
+            elseif path[1] == 128 || path[1] == 121
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(7) <= time < ar_time - Dates.Minute(5)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(7) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(5) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
+            
+            #If starting from Valby
+            elseif path[1] == 123
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(6) <= time < ar_time - Dates.Minute(4)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(6) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(4) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
+            
+
+            #If starting from CPH Airport
+            elseif path[1] == 125
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(10)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(10) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
+            end
+            =#
+
+            ###############
+            #Blocking 1/3 route from beginning
+            ###############
+            elseif path[1] == 128 || path[1] == 121
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(7) <= time < ar_time - Dates.Minute(5)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(5) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(2) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
+            
+            #If starting from Valby
+            elseif path[1] == 123
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(6) <= time < ar_time - Dates.Minute(4)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(4) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(2) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
+            
+
+            #If starting from CPH Airport
+            elseif path[1] == 125
+                #src_zone with 30 km/hr
+                if jct in path_to_start
+                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(10)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #Mid_zone with 70 km/hr
+                if jct in path_to_mid
+                    if ar_time - Dates.Minute(10) <= time < ar_time - Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #end_zone with 30 km/hr
+                if jct in path_to_end
+                    if ar_time - Dates.Minute(2) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
+            end
+
 
             # If junction is the platform
             if jct == platform
@@ -469,6 +623,10 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
+            #=
+            ###############
+            #Blocking full route from beginning
+            ###############
             elseif path[end] == 122 || path[end] == 127
                 if jct in path_from_start
                     if dep_time <= time < dep_time + Dates.Minute(2)
@@ -517,6 +675,118 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                 end
                 if jct in path_from_end
                     if dep_time <= time < dep_time + Dates.Minute(12)
+                        init_m[r, c] = 1
+                    end
+                end
+            end
+            =#
+            #=
+            ###############
+            #Blocking 2/3 route from beginning
+            ###############
+            elseif path[end] == 122 || path[end] == 127
+            if jct in path_from_start
+                if dep_time <= time < dep_time + Dates.Minute(2)
+                    init_m[r, c] = 1
+                end
+            end
+            if jct in path_from_mid
+                if dep_time <= time < dep_time + Dates.Minute(5)
+                    init_m[r, c] = 1
+                end
+            end
+            if jct in path_from_end
+                if dep_time + Dates.Minute(2) <= time < dep_time + Dates.Minute(7)
+                    init_m[r, c] = 1
+                end
+            end
+            #Valby
+            elseif path_from_end[end] == 124
+                if jct in path_from_start
+                    if dep_time <= time < dep_time + Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_mid
+                    if dep_time <= time < dep_time + Dates.Minute(4)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_end
+                    if dep_time  + Dates.Minute(2) <= time < dep_time + Dates.Minute(6)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #CPH Airport
+            elseif path_from_end[end] == 126
+                if jct in path_from_start
+                    if dep_time <= time < dep_time + Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_mid
+                    if dep_time <= time < dep_time + Dates.Minute(10)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_end
+                    if dep_time  + Dates.Minute(2) <= time < dep_time + Dates.Minute(12)
+                        init_m[r, c] = 1
+                    end
+                end
+            end =#
+            ###############
+            #Blocking 1/3 route from beginning
+            ###############
+            elseif path[end] == 122 || path[end] == 127
+            if jct in path_from_start
+                if dep_time <= time < dep_time + Dates.Minute(2)
+                    init_m[r, c] = 1
+                end
+            end
+            if jct in path_from_mid
+                if dep_time + Dates.Minute(2) <= time < dep_time + Dates.Minute(5)
+                    init_m[r, c] = 1
+                end
+            end
+            if jct in path_from_end
+                if dep_time + Dates.Minute(5) <= time < dep_time + Dates.Minute(7)
+                    init_m[r, c] = 1
+                end
+            end
+            #Valby
+            elseif path_from_end[end] == 124
+                if jct in path_from_start
+                    if dep_time <= time < dep_time + Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_mid
+                    if dep_time + Dates.Minute(2) <= time < dep_time + Dates.Minute(4)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_end
+                    if dep_time  + Dates.Minute(4) <= time < dep_time + Dates.Minute(6)
+                        init_m[r, c] = 1
+                    end
+                end
+
+                #CPH Airport
+            elseif path_from_end[end] == 126
+                if jct in path_from_start
+                    if dep_time <= time < dep_time + Dates.Minute(2)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_mid
+                    if dep_time + Dates.Minute(2) <= time < dep_time + Dates.Minute(10)
+                        init_m[r, c] = 1
+                    end
+                end
+                if jct in path_from_end
+                    if dep_time  + Dates.Minute(10) <= time < dep_time + Dates.Minute(12)
                         init_m[r, c] = 1
                     end
                 end

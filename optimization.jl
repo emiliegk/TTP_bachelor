@@ -61,7 +61,7 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
 
         =#
         # Get the values of x as a vector
-        x_values = value.(x)
+        x_values = convert(Vector{Int8}, round.(value.(x)))
         #=
         # Print the values with a newline after every 23rd value
         for i in 1:length(x_values)
@@ -77,7 +77,7 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
 
        
        
-        return value.(x)  # Return the selected paths
+        return x_values  # Return the selected paths
     else
         println("No optimal solution found. Status: ", status)
         return nothing  # Return nothing if no solution is found
@@ -86,7 +86,7 @@ end
 
 
 
-function id_op_path(T::Matrix{Int8}, op_sol::Vector{Float64}, Omega::Vector{Any})
+function id_op_path(T::Matrix{Int8}, op_sol::Vector{Int8}, Omega::Vector{Any})
     num_trains = size(T, 1)
     num_paths = size(T, 2)
 
@@ -101,6 +101,8 @@ function id_op_path(T::Matrix{Int8}, op_sol::Vector{Float64}, Omega::Vector{Any}
     for i in 1:num_trains
         # Find the column index where x[j] == 1 for the current row
         selected_column = findfirst(j -> T[i, j] == 1 && op_sol[j] == 1, 1:num_paths)
+        #println(selected_column)
+        
         if selected_column !== nothing
             path = path_set[selected_column]
             t_id = t_id_set[selected_column]
@@ -110,8 +112,9 @@ function id_op_path(T::Matrix{Int8}, op_sol::Vector{Float64}, Omega::Vector{Any}
         else
             println("Row $i: No column selected")
         end
+        
     end
-    results
+    return results
 end
 
 function create_csv(df::Matrix{Any}, id_op_path::Matrix{Any})
