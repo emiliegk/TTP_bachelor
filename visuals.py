@@ -4,6 +4,11 @@ from plotly.subplots import make_subplots
 
 # Read and prepare data
 df = pd.read_csv('train_schedule_with_paths.csv')
+
+# Store Any[] train IDs
+any_df = pd.read_csv('train_schedule_with_paths.csv')
+any_trains = any_df[any_df['platform'] == 'Any[]']['train_id'].tolist()
+
 df = df[df['platform'] != 'Any[]']
 df['platform'] = df['platform'].astype(str)
 df.loc[df['platform'] == '9', 'platform'] = '26'
@@ -126,6 +131,28 @@ for i, (start, end) in enumerate(time_ranges, 1):
         tickangle=30
     )
 
+# --- Title above null-path trains" ---
+fig.add_trace(go.Scatter(
+    x=[None],
+    y=[None],
+    line=dict(color=direction_colors[row['direction']], width=0),
+    mode='lines',
+    name='Trains with Null path:',
+    showlegend=True,
+    hoverinfo='text'
+))
+
+# --- List train IDs under the title ---
+for train_id in any_trains:
+    fig.add_trace(go.Scatter(
+        x=[None],
+        y=[None],
+        mode='markers',
+        marker=dict(color='black', symbol='circle', opacity=0),
+        name=f"TrainID: {train_id}",
+        showlegend=True
+    ))
+
 # Update layout
 fig.update_layout(
     title_text="Train Platform Occupancy Schedule",
@@ -136,4 +163,4 @@ fig.update_layout(
     hovermode='closest'
 )
 
-fig.write_image("train_occupancy_swimlane_with_null_punishment.png", scale=2)
+fig.write_image("train_occupancy_swimlane_with_trainID_Any.png", scale=2)
