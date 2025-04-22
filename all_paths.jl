@@ -10,8 +10,15 @@ export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, se
 
 #Finds trains to Nørreport
 function find_trains() 
-    df = XLSX.readxlsx("Ophold_Kh.xlsx")
-    sheet = df["Data"]
+    filename = "Ophold_Kh_2022.xlsx"
+    df = XLSX.readxlsx(filename)
+    
+    if occursin("Ophold_Kh.xlsx", filename)
+        sheet = df["Data"]
+    elseif occursin("Ophold_Kh_2022.xlsx", filename)
+        sheet = df["FInal result"]
+    end
+    
     data = sheet["B2:J"*string(size(sheet[:], 1))] 
     to_matrix = Matrix(data)  # Ensures row-wise structure
         

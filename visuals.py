@@ -86,7 +86,7 @@ for i, (start, end) in enumerate(time_ranges, 1):
         if train_label.endswith('*'):
             text_color = 'red'
 
-        show_legend = (i == 1) and (row['direction'] not in added_directions)
+        show_legend = (row['direction'] not in added_directions)
         if show_legend:
             added_directions.add(row['direction'])
 
@@ -119,7 +119,9 @@ for i, (start, end) in enumerate(time_ranges, 1):
         tickformat='%H:%M',
         row=i, col=1,
         tick0=grid_start_time,
-        dtick=five_minutes_ms  # Keep dtick at 5 minutes for labels
+        dtick=five_minutes_ms,  # Keep dtick at 5 minutes for labels
+        tickangle=30,  # Force horizontal labels
+        tickfont=dict(size=10)
     )
     fig.update_yaxes(
         tickvals=list(range(len(platform_labels_ordered))),
@@ -135,32 +137,50 @@ for i, (start, end) in enumerate(time_ranges, 1):
 fig.add_trace(go.Scatter(
     x=[None],
     y=[None],
-    line=dict(color=direction_colors[row['direction']], width=0),
     mode='lines',
-    name='Trains with Null path:',
-    showlegend=True,
-    hoverinfo='text'
+    line=dict(width=0),  # Invisible trace
+    name='<b>Trains with Null Path:</b>',  # Bold title
+    legendgroup='null_trains_header',  # Separate group for the header
+    showlegend=True
 ))
 
-# --- List train IDs under the title ---
+# --- List train IDs under the title with indentation ---
 for train_id in any_trains:
     fig.add_trace(go.Scatter(
         x=[None],
         y=[None],
-        mode='markers',
-        marker=dict(color='black', symbol='circle', opacity=0),
-        name=f"TrainID: {train_id}",
+        mode='markers + lines',
+       marker=dict(
+            symbol='circle',
+            opacity=0.5,      # Must be visible
+            size=2,         # Very small (minimum recommended: 2)
+            color='black',
+            line=dict(width=0)  # Remove any border
+        ),
+        line=dict(width=0),     # Hide the line
+        name=f'TrainID: {train_id}',
+        legendgroup='null_trains_items',
         showlegend=True
     ))
 
+# Update layout to control legend appearance
+fig.update_layout(
+    legend=dict(
+        traceorder='normal',  # Maintain the order we added traces
+        itemsizing='constant',  # Keep item sizes consistent
+        itemwidth=30,          # Reduces the width allocated to each legend item
+        font=dict(size=10),
+        groupclick='toggleitem'  # Allow individual items to be toggled
+    )
+)
 # Update layout
 fig.update_layout(
     title_text="Train Platform Occupancy Schedule",
     title_x=0.5,
     height=1200,
-    legend_title_text="Direction",
+    legend_title="Direction",
     margin=dict(l=150, r=50, b=50, t=100),
     hovermode='closest'
 )
 
-fig.write_image("train_occupancy_swimlane_with_trainID_Any.png", scale=2)
+fig.write_image("data_2022_0.3.png", scale=2)
