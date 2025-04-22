@@ -131,7 +131,7 @@ for i, (start, end) in enumerate(time_ranges, 1):
         tickangle=30
     )
 
-# --- Title above null-path trains" ---
+# Title above null-path trains" 
 fig.add_trace(go.Scatter(
     x=[None],
     y=[None],
@@ -142,7 +142,7 @@ fig.add_trace(go.Scatter(
     hoverinfo='text'
 ))
 
-# --- List train IDs under the title ---
+# List train IDs under the title 
 for train_id in any_trains:
     fig.add_trace(go.Scatter(
         x=[None],
@@ -163,4 +163,4 @@ fig.update_layout(
     hovermode='closest'
 )
 
-fig.write_image("train_occupancy_swimlane_with_trainID_Any.png", scale=2)
+fig.write_image("train_occupancy_swimlane_0.67_blocked.png", scale=2)

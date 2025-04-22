@@ -234,7 +234,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         path_from_mid = omega[8]
         path_from_end = omega[9]
 
-        for buffer in 3
+        for buffer in 3:10
             punishment = exp(-4/5*buffer)*10000
             if platform == 9
                 punishment += 200
@@ -457,7 +457,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end
             =#
 
-            #=
+            
             ###############
             #Blocking 2/3 of the route
             ###############
@@ -530,8 +530,9 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             end
-            =#
+            
 
+            #=
             ###############
             #Blocking 1/3 route from beginning
             ###############
@@ -604,7 +605,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             end
-
+            =#
 
             # If junction is the platform
             if jct == platform
@@ -623,7 +624,8 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            #=
+            
+            #=    
             ###############
             #Blocking full route from beginning
             ###############
@@ -680,7 +682,8 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                 end
             end
             =#
-            #=
+            
+            
             ###############
             #Blocking 2/3 route from beginning
             ###############
@@ -735,7 +738,10 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end =#
+            end 
+            
+
+            #=
             ###############
             #Blocking 1/3 route from beginning
             ###############
@@ -790,7 +796,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end
+            end=#
         end
     end
     #println( init_m[:, 150])
