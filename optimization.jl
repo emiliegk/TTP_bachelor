@@ -6,7 +6,7 @@ module optimization
 using DataFrames
 using XLSX
 using JuMP
-using HiGHS
+using Gurobi
 using CSV
 using Dates
 using SparseArrays
@@ -29,7 +29,7 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
     
 
     # Create a model
-    model = Model(HiGHS.Optimizer)
+    model = Model(Gurobi.Optimizer)
     # set_optimizer_attribute(model, "Presolve", 0)  # Disable presolve
     # set_optimizer_attribute(model, "Heuristics", 0)  # Reduce heuristics
 
