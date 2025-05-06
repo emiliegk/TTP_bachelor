@@ -11,9 +11,6 @@ using CSV
 using Dates
 using SparseArrays
 
-#=include("all_paths.jl")
-using .All_paths=#
-
 export set_packing, id_op_path, create_csv
 
 function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
@@ -25,7 +22,10 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
     num_trains = size(T, 1)
     num_paths = size(T, 2)
     num_resources = size(R, 1)
-    punishment = [o[11] for o in omega]
+    #MODEL 1+2
+    punishment = [o[7] for o in omega]
+   #= #MODEL 3
+    punishment = [o[11] for o in omega]=#
     
 
     # Create a model
@@ -35,8 +35,6 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
 
     # Define the binary decision variable x
     @variable(model, x[1:num_paths], Bin)
-
-
 
     # Objective function: minimize the sum of punishments for selected paths
     @objective(model, Min, punishment' * x)
@@ -54,28 +52,9 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
     # Check the status of the solution
     status = termination_status(model)
     if status == MOI.OPTIMAL
-        #=
-        println("Optimal solution found")
-        println("Objective value: ", objective_value(model))
-        println("Selected paths: ")
 
-        =#
         # Get the values of x as a vector
         x_values = convert(Vector{Int8}, round.(value.(x)))
-        #=
-        # Print the values with a newline after every 23rd value
-        for i in 1:length(x_values)
-            #print(x_value[i], " ")
-            println("Index: $i, Value: $(x_values[i])") 
-            #=if i % 23 == 0
-                println("")  # Newline after every 23rd value
-                println("")  # Extra newline to separate blocks of 23 values
-            end=#
-        end
-        println()  # Final newline to ensure the output ends cleanly
-        =#
-
-       
        
         return x_values  # Return the selected paths
     else
@@ -93,7 +72,12 @@ function id_op_path(T::Matrix{Int8}, op_sol::Vector{Int8}, Omega::Vector{Any})
     #isolate the paths from omega
     path_set = [i[2] for i in Omega]
     t_id_set = [i[1] for i in Omega]
-    platform_set = [i[6] for i in Omega]
+
+    #MODEL 1+2
+    platform_set = [i[4] for i in Omega]
+
+   #= #MODEL 3
+    platform_set = [i[6] for i in Omega] =#
 
     #result matrix
     results = Matrix{Any}(undef, num_trains, 3)

@@ -1,7 +1,7 @@
 using Pkg
 using DataStructures
 
-module All_paths
+module model_1and2
 using DataFrames
 using XLSX
 using Dates
@@ -10,13 +10,13 @@ export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, se
 
 #Finds trains to Nørreport
 function find_trains() 
-    filename = "Ophold_Kh.xlsx"
+    filename = "Ophold på Kh - Onsdag 2022 1.xlsx"
     df = XLSX.readxlsx(filename)
     
     if occursin("Ophold_Kh.xlsx", filename)
         sheet = df["Data"]
     elseif occursin("Ophold på Kh - Onsdag 2022 1.xlsx", filename)
-        sheet = df["Final result"]
+        sheet = df["FInal result"]
     end
     
     data = sheet["B2:J"*string(size(sheet[:], 1))] 
@@ -137,7 +137,6 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     # Create expanded Omega with block durations (3-7 minutes)
     expanded_omega = []
 
-    #MODEL 1 + 2
     for omega in combined_paths
         train_id = omega[1]
         combined_paths = omega[2]
@@ -149,16 +148,17 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         for buffer in 3:10
             punishment = exp(-4/5*buffer)*10000
 
-            #MODEL 2
+           #= #MODEL 2
             if platform == 9
                 punishment += 200
             end
             # Punishment for the path length
-            punishment += 5 * length(combined_paths)
+            punishment += 5 * length(combined_paths) =#
 
             push!(expanded_omega, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
         end
     end
+    
     #Create NULL paths
     null_array = []
     
@@ -271,7 +271,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
         for (r, (jct, time)) in enumerate(S)
             # If junction is in path to platform
             if jct in path_to
-                if ar_time - Dates.Minute(2) <= time <= ar_time 
+                if ar_time - Dates.Minute(3) <= time < ar_time 
                     init_m[r, c] = 1
                 end
             end 
