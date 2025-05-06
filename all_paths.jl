@@ -10,13 +10,13 @@ export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, se
 
 #Finds trains to Nørreport
 function find_trains() 
-    filename = "Ophold på Kh - Onsdag 2022 1.xlsx"
+    filename = "Ophold_Kh.xlsx"
     df = XLSX.readxlsx(filename)
     
     if occursin("Ophold_Kh.xlsx", filename)
         sheet = df["Data"]
     elseif occursin("Ophold på Kh - Onsdag 2022 1.xlsx", filename)
-        sheet = df["FInal result"]
+        sheet = df["Final result"]
     end
     
     data = sheet["B2:J"*string(size(sheet[:], 1))] 
@@ -60,15 +60,8 @@ function find_trains()
 
     end
   
-    #For now we are only interested in the trains going to Nørreport
-    #This has to be changed later!!!!!
-        
-    # Corrected code
     cleaned_df = to_matrix
-    #cleaned_df = cleaned_df[.!( (cleaned_df[:, 8] .== "Workshop") .|  (cleaned_df[:, 4] .== "Workshop") ), :]
-    #cleaned_df = cleaned_df[1:end .!= 24, :]  # Keeps all rows except row 24
-    #cleaned_df = cleaned_df[1:end .!= 81, :]
-        
+    
     return cleaned_df
 end
 
@@ -230,6 +223,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
 
     # Create expanded Omega with block durations (3-7 minutes)
     expanded_omega = []
+
     for omega in combined_paths
         train_id = omega[1]
         combined_paths = omega[2]
@@ -271,13 +265,6 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     end
 
     final_omega = vcat(null_array, expanded_omega)
-   #= for i in 1:length(combined_paths)
-        if combined_paths[i][1] == 121
-            println("")
-            println(combined_paths[i])
-            println("")
-        end
-    end=#
 
     return final_omega
 end
@@ -352,10 +339,6 @@ end
 
 
 function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
-    # First filter S to only include platform-time combinations (platforms 1-9)
-    #=jct_set = [j[1] for j in S]
-    time_set = [j[2] for j in S]=#
-    
     # Initialize matrix with correct dimensions
     init_m = zeros(Int8, length(S), length(omega))
     
@@ -614,14 +597,14 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end=#
             
 
-            # If junction is the platform
+            #If junction is the platform
             if jct == platform
                 if platform_start <= time < platform_end
                     init_m[r, c] = 1
                 end
             end
 
-            # If junction is in path from platform
+            #If junction is in path from platform
             #If Ending at København Syd or Nørreport
             if path == []
                 continue
@@ -806,7 +789,6 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end=#
         end
     end
-    #println( init_m[:, 150])
     # Return both the matrix and column info for reference
     return  init_m
 end
@@ -829,20 +811,8 @@ function mat_T(Omega::Vector{Any}, df::Matrix{Any})
         end
     end
     
-    #=
-    count = 0
-    for value in Iterators.flatten(eachrow(init_m))  # Flatten the matrix row-wise
-        print(value, " ")  # Print each number with a space
-        count += 1
-        if count % (5522)== 0  # Insert a newline every 33 numbers
-            println("")
-            println("")
-        end
-    end=#
     return init_m
 end
-
-
 
 
 #Function for BFS
@@ -919,9 +889,6 @@ function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Int, v::Int) #v = num
                 #If last vertex is dst, print path
                 if last == d
                     push!(path_jcts, path)
-                    #println("")
-                    #print("Path ", path_count, ": " )
-                    #printpath(path_jcts[path_count])
                     path_count += 1
                 end
 
@@ -933,11 +900,8 @@ function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Int, v::Int) #v = num
                     end
                 end
             end
-            #println("")
-            #print("----------------")
         end
     end
-    #println("")
     return(path_jcts)
 end
 
