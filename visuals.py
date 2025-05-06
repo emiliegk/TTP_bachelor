@@ -183,4 +183,4 @@ fig.update_layout(
     hovermode='closest'
 )
 
-fig.write_image("data_2022_0.3.png", scale=2)
+fig.write_image("data_2022_full.png", scale=2)

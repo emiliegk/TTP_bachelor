@@ -10,12 +10,12 @@ export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, se
 
 #Finds trains to Nørreport
 function find_trains() 
-    filename = "Ophold_Kh_2022.xlsx"
+    filename = "Ophold på Kh - Onsdag 2022 1.xlsx"
     df = XLSX.readxlsx(filename)
     
     if occursin("Ophold_Kh.xlsx", filename)
         sheet = df["Data"]
-    elseif occursin("Ophold_Kh_2022.xlsx", filename)
+    elseif occursin("Ophold på Kh - Onsdag 2022 1.xlsx", filename)
         sheet = df["FInal result"]
     end
     
@@ -389,7 +389,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             
-            #=
+            
             ###############
             #Blocking full route from beginning
             ###############
@@ -462,9 +462,9 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             end
-            =#
-
             
+
+            #=
             ###############
             #Blocking 2/3 of the route
             ###############
@@ -537,7 +537,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             end
-            
+            =#
 
             #=
             ###############
@@ -611,8 +611,8 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end
-            =#
+            end=#
+            
 
             # If junction is the platform
             if jct == platform
@@ -632,7 +632,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             
-            #=    
+                
             ###############
             #Blocking full route from beginning
             ###############
@@ -688,9 +688,9 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             end
-            =#
             
             
+            #=
             ###############
             #Blocking 2/3 route from beginning
             ###############
@@ -746,7 +746,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             end 
-            
+            =#
 
             #=
             ###############
