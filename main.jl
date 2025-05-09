@@ -6,8 +6,10 @@ using XLSX
 
 include("graph.jl") 
 using .Graph
-include("all_paths.jl")
-using .All_paths
+#=include("all_paths.jl")
+using .All_paths=#
+include("model_1and2.jl")
+using .model_1and2
 include("optimization.jl")
 using .optimization
 
