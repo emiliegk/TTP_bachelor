@@ -10,12 +10,12 @@ export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, se
 
 #Finds trains to Nørreport
 function find_trains() 
-    filename = "Ophold_Kh_2022.xlsx"
+    filename = "Ophold på Kh - Onsdag 2022 1.xlsx"
     df = XLSX.readxlsx(filename)
     
     if occursin("Ophold_Kh.xlsx", filename)
         sheet = df["Data"]
-    elseif occursin("Ophold_Kh_2022.xlsx", filename)
+    elseif occursin("Ophold på Kh - Onsdag 2022 1.xlsx", filename)
         sheet = df["FInal result"]
     end
     
@@ -241,7 +241,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         path_from_mid = omega[8]
         path_from_end = omega[9]
 
-        for buffer in 3:10
+        for buffer in 3
             punishment = exp(-4/5*buffer)*10000
             if platform == 9
                 punishment += 200
@@ -845,16 +845,6 @@ end
 
 
 
-#Function for BFS
-function not_visited(x::Int, path::Vector{Int})
-    size = length(path)
-    for i in 1:size
-        if (path[i] == x)
-            return 0
-        end
-    end
-    return 1
-end
 
 function allocate_t_src(df::Matrix{Any})
     t_src = []
@@ -895,14 +885,22 @@ function allocate_t_dst(df::Matrix{Any})
 
 end 
 
+#Function for BFS
+function not_visited(x::Int, path::Vector{Int})
+    size = length(path)
+    for i in 1:size
+        if (path[i] == x)
+            return 0
+        end
+    end
+    return 1
+end
+
 #Find all paths using BFS
 function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Int, v::Int) #v = number of vertices in g
-    path_count = 1
     path_jcts = []
     for s in src #For every starting point (source)
         for d in dst #For every destination
-            #println("")
-            #print("Paths from platform $(s) to platform $(d): ")
         
         #Create queue for path
             q = []
@@ -919,10 +917,6 @@ function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Int, v::Int) #v = num
                 #If last vertex is dst, print path
                 if last == d
                     push!(path_jcts, path)
-                    #println("")
-                    #print("Path ", path_count, ": " )
-                    #printpath(path_jcts[path_count])
-                    path_count += 1
                 end
 
                 for i in 1:length(g[last])
@@ -933,11 +927,8 @@ function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Int, v::Int) #v = num
                     end
                 end
             end
-            #println("")
-            #print("----------------")
         end
     end
-    #println("")
     return(path_jcts)
 end
 

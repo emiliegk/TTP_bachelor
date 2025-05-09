@@ -2,7 +2,7 @@ using Pkg
 # Add if you don't have the package: Pkg.add("DataStructures") 
 using DataStructures
 using XLSX
-using Gurobi
+# using Gurobi
 
 include("graph.jl") 
 using .Graph
@@ -24,10 +24,10 @@ function main()
     
     
     
-    S = set_S(to_kh, from_kh, df)
+    #S = set_S(to_kh, from_kh, df)
     o = omega(to_kh, from_kh, to_w, from_w, junct, df) 
-
-    
+    println(o[400])
+    #=
     R = mat_R(S, o, df)
     T = mat_T(o, df)
     
@@ -35,7 +35,7 @@ function main()
     opt = id_op_path(T, x, o)
 
     create_csv(df, opt)
-
+=#
 end
 
 main()
