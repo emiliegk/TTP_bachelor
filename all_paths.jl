@@ -454,21 +454,21 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             elseif path[1] == 125
                 #src_zone with 30 km/hr
                 if jct in path_to_start
-                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(10)
+                    if ar_time - Dates.Minute(13) <= time < ar_time - Dates.Minute(11)
                         init_m[r, c] = 1
                     end
                 end
 
                 #Mid_zone with 70 km/hr
                 if jct in path_to_mid
-                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(2)
+                    if ar_time - Dates.Minute(13) <= time < ar_time - Dates.Minute(2)
                         init_m[r, c] = 1
                     end
                 end
 
                 #end_zone with 30 km/hr
                 if jct in path_to_end
-                    if ar_time - Dates.Minute(12) <= time < ar_time 
+                    if ar_time - Dates.Minute(13) <= time < ar_time 
                         init_m[r, c] = 1
                     end
                 end
@@ -529,21 +529,21 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             elseif path[1] == 125
                 #src_zone with 30 km/hr
                 if jct in path_to_start
-                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(10)
+                    if ar_time - Dates.Minute(13) <= time < ar_time - Dates.Minute(11)
                         init_m[r, c] = 1
                     end
                 end
 
                 #Mid_zone with 70 km/hr
                 if jct in path_to_mid
-                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(2)
+                    if ar_time - Dates.Minute(13) <= time < ar_time - Dates.Minute(2)
                         init_m[r, c] = 1
                     end
                 end
 
                 #end_zone with 30 km/hr
                 if jct in path_to_end
-                    if ar_time - Dates.Minute(10) <= time < ar_time 
+                    if ar_time - Dates.Minute(11) <= time < ar_time 
                         init_m[r, c] = 1
                     end
                 end
@@ -604,14 +604,14 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             elseif path[1] == 125
                 #src_zone with 30 km/hr
                 if jct in path_to_start
-                    if ar_time - Dates.Minute(12) <= time < ar_time - Dates.Minute(10)
+                    if ar_time - Dates.Minute(13) <= time < ar_time - Dates.Minute(11)
                         init_m[r, c] = 1
                     end
                 end
 
                 #Mid_zone with 70 km/hr
                 if jct in path_to_mid
-                    if ar_time - Dates.Minute(10) <= time < ar_time - Dates.Minute(2)
+                    if ar_time - Dates.Minute(11) <= time < ar_time - Dates.Minute(2)
                         init_m[r, c] = 1
                     end
                 end
@@ -695,12 +695,12 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
                 if jct in path_from_mid
-                    if dep_time <= time < dep_time + Dates.Minute(10)
+                    if dep_time <= time < dep_time + Dates.Minute(11)
                         init_m[r, c] = 1
                     end
                 end
                 if jct in path_from_end
-                    if dep_time <= time < dep_time + Dates.Minute(12)
+                    if dep_time <= time < dep_time + Dates.Minute(13)
                         init_m[r, c] = 1
                     end
                 end
@@ -753,12 +753,12 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
                 if jct in path_from_mid
-                    if dep_time <= time < dep_time + Dates.Minute(10)
+                    if dep_time <= time < dep_time + Dates.Minute(11)
                         init_m[r, c] = 1
                     end
                 end
                 if jct in path_from_end
-                    if dep_time  + Dates.Minute(2) <= time < dep_time + Dates.Minute(12)
+                    if dep_time  + Dates.Minute(2) <= time < dep_time + Dates.Minute(13)
                         init_m[r, c] = 1
                     end
                 end
@@ -811,12 +811,12 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
                 if jct in path_from_mid
-                    if dep_time + Dates.Minute(2) <= time < dep_time + Dates.Minute(10)
+                    if dep_time + Dates.Minute(2) <= time < dep_time + Dates.Minute(11)
                         init_m[r, c] = 1
                     end
                 end
                 if jct in path_from_end
-                    if dep_time  + Dates.Minute(10) <= time < dep_time + Dates.Minute(12)
+                    if dep_time  + Dates.Minute(11) <= time < dep_time + Dates.Minute(13)
                         init_m[r, c] = 1
                     end
                 end
