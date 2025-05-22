@@ -90,7 +90,8 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
             if dst_platform == 9 && (df[i, 1] in ["IL", "L"] || df[i, 5] in ["IL", "L"])
                 continue
             end
-            if t_src_to[i][2] == 59
+            #Differentiate between workshop and normal paths
+            if t_src_to[i][2] == 59 
                 paths_to = find_paths(to_w_graph, t_src_to[i][2], dst_platform, v)
                 for path in paths_to
                     push!(to_set, (train_id, path, dst_platform))
@@ -112,8 +113,8 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
             if src_platform == 9 && (df[i, 1] in ["IL", "L"] || df[i, 5] in ["IL", "L"])
                 continue
             end
+            #Differentiate between workshop and normal paths
             if t_dst_from[i][2] == 59
-                
                 paths_to = find_paths(from_w_graph, src_platform, t_dst_from[i][2], v)
                 for path in paths_to
                     push!(from_set, (train_id, path, src_platform))
@@ -141,28 +142,44 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
                 src_zone_to = Int[]
                 to_south = vcat(zone_val, zone_ny, zone_cph)
                 while count ≤ length(path_to)
-                    if path_to[1] == 128
-                        count -=1
+                    #If KN or Worskhop make array empty
+                    if path_to[1] == 128 || path_to[1] == 59
+                        #count -=1
                         break
                     end
-                    push!(src_zone_to, path_to[count])
+                    #=elseif path_to[1] == 59
+                        #count -=1
+                        break
+                    end=#
+                    
                     if path_to[count] ∈ to_south
                         if path_to[count+1] ∉ to_south
                             break
                         end
+                    
                     end
+                    push!(src_zone_to, path_to[count])
                     count += 1
                 end
                 
 
                 mid_zone_to = Int[]
 
-                count += 1
+                #count += 1
                 while (count) ≤ length(path_to)
-                    push!(mid_zone_to, path_to[count])
-                    if path_to[count] ∈ zone_kh
+                    #If Worskhop make array empty
+                    if path_to[1] == 128 || path_to[1] == 59
+                        count -=1
                         break
+                    
+                    
+                    elseif path_to[count] ∈ zone_kh
+                        if path_to[count+1] ∉ zone_kh
+                            push!(mid_zone_to, path_to[count])
+                            break
+                        end
                     end
+                    push!(mid_zone_to, path_to[count])
                     count += 1
                     if path_to[1] == 128 && count == length(path_to)
                         break
@@ -180,25 +197,27 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
                 count = 1
                 src_zone_from = Int[]
                 while count ≤ length(path_from)
-                    if path_from[end] == 127
-                        count -=1
-                        break
-                    end
-                    push!(src_zone_from, path_from[count])
+                    
+                    
                     if path_from[count] ∈ zone_kh
                         if path_from[count+1] ∉ zone_kh
                             break
                         end
                     end
+                    push!(src_zone_from, path_from[count])
                     count += 1
                 end
                 
 
                 mid_zone_from = Int[]
-                count += 1
+                #count += 1
                 while (count) ≤ length(path_from)
-                    if path_from[end] == 127 && count == 1
-                        count +=1
+                    if path_from[end] == 59 || path_from[end] == 127
+                        count -=1
+                        break
+                    
+                    #=elseif path_from[end] == 127 && count == 1
+                        count +=1=#
                     end
                     push!(mid_zone_from, path_from[count])
                     if path_from[count] ∈ to_south
@@ -210,6 +229,10 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
 
                 end_zone_from = Int[]
                 for i in count:(length(path_from))
+                    if path_from[end] == 59 || path_from[end] == 127
+                        
+                        break
+                    end
                     push!(end_zone_from, path_from[i])
                 end
 
@@ -264,7 +287,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     end
 
     final_omega = vcat(null_array, expanded_omega)
-    println("length of combined_paths: ", length(final_omega))
+    println(final_omega[450])
     return final_omega
 end
 
@@ -370,12 +393,18 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
+            elseif path[1] == 128
+                if jct in path_to_start || jct in path_to_mid || jct in path_to_end
+                    if ar_time - Dates.Minute(3) <= time < ar_time 
+                        init_m[r, c] = 1
+                    end
+                end
             
             
             ###############
             #Blocking full route from beginning
             ###############
-            elseif path[1] == 128 || path[1] == 121
+            elseif path[1] == 121
                 #src_zone with 30 km/hr
                 if jct in path_to_start
                     if ar_time - Dates.Minute(7) <= time < ar_time - Dates.Minute(5)
@@ -450,7 +479,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             ###############
             #Blocking 2/3 of the route
             ###############
-            elseif path[1] == 128 || path[1] == 121
+            elseif path[1] == 121
                 #src_zone with 30 km/hr
                 if jct in path_to_start
                     if ar_time - Dates.Minute(7) <= time < ar_time - Dates.Minute(5)
@@ -525,7 +554,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             ###############
             #Blocking 1/3 route from beginning
             ###############
-            elseif path[1] == 128 || path[1] == 121
+            elseif path[1] == 121
                 #src_zone with 30 km/hr
                 if jct in path_to_start
                     if ar_time - Dates.Minute(7) <= time < ar_time - Dates.Minute(5)
@@ -604,7 +633,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end
 
             #If junction is in path from platform
-            #If Ending at København Syd or Nørreport
+            t
             if path == []
                 continue
             elseif path[end] == 59
@@ -613,12 +642,18 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            
+            elseif path[end] == 127
+                if jct in path_from_start || jct in path_from_mid || jct in path_from_end
+                    if dep_time <= time < dep_time + Dates.Minute(3)
+                        init_m[r, c] = 1
+                    end
+                end
                 
             ###############
             #Blocking full route from beginning
             ###############
-            elseif path[end] == 122 || path[end] == 127
+            #If Ending at København Syd 
+            elseif path[end] == 122 
                 if jct in path_from_start
                     if dep_time <= time < dep_time + Dates.Minute(2)
                         init_m[r, c] = 1
@@ -676,7 +711,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             ###############
             #Blocking 2/3 route from beginning
             ###############
-            elseif path[end] == 122 || path[end] == 127
+            elseif path[end] == 122 
             if jct in path_from_start
                 if dep_time <= time < dep_time + Dates.Minute(2)
                     init_m[r, c] = 1
@@ -734,7 +769,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             ###############
             #Blocking 1/3 route from beginning
             ###############
-            elseif path[end] == 122 || path[end] == 127
+            elseif path[end] == 122 
             if jct in path_from_start
                 if dep_time <= time < dep_time + Dates.Minute(2)
                     init_m[r, c] = 1
@@ -878,6 +913,7 @@ end
 #Find all paths using BFS
 function find_paths(g::Vector{Vector{Int}}, src::Int, dst::Int, v::Int) #v = number of vertices in g
     path_jcts = []
+    path_count = 1
     for s in src #For every starting point (source)
         for d in dst #For every destination
         
