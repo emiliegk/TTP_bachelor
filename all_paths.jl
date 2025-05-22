@@ -9,16 +9,13 @@ using SparseArrays
 export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
-function find_trains() 
-    filename = "Ophold_Kh.xlsx"
+function find_trains(filename::String) 
     df = XLSX.readxlsx(filename)
     
-    if occursin("Ophold_Kh.xlsx", filename)
+    if filename == "Ophold_Kh.xlsx"
         sheet = df["Data"]
-    elseif occursin("Ophold på Kh - Onsdag 2022 1.xlsx", filename)
+    elseif filename == "Ophold på Kh - Onsdag 2022 1.xlsx"
         sheet = df["FInal result"]
-    elseif occursin("Ophold på Kh - Onsdag 2022 1.xlsx", filename)
-        sheet = df["Final result"]
     end
     
     data = sheet["B2:J"*string(size(sheet[:], 1))] 
@@ -225,7 +222,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
 
     # Create expanded Omega with block durations (3-7 minutes)
     expanded_omega = []
-
+    
     for omega in combined_paths
         train_id = omega[1]
         combined_paths = omega[2]
@@ -267,7 +264,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     end
 
     final_omega = vcat(null_array, expanded_omega)
-
+    println("length of combined_paths: ", length(final_omega))
     return final_omega
 end
 

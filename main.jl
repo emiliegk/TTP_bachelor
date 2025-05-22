@@ -2,6 +2,7 @@ using Pkg
 # Add if you don't have the package: Pkg.add("DataStructures") 
 using DataStructures
 using XLSX
+using Statistics
 # using Gurobi
 
 include("graph.jl") 
@@ -13,6 +14,8 @@ using .model_1and2
 include("optimization.jl")
 using .optimization
 
+include("Plots.jl")
+using .plot_m
 
 
 function main()
@@ -27,8 +30,17 @@ function main()
     
     
     #S = set_S(to_kh, from_kh, df)
-    o = omega(to_kh, from_kh, to_w, from_w, junct, df) 
-    println(o[400])
+    o = omega(to_kh, from_kh, to_w, from_w, junct, df)
+    filtered_o = [inner_list for inner_list in o if length(inner_list[2]) != 0]
+    path_lengths = length.([inner_list[2] for inner_list in filtered_o])
+    println(length(o[2]))
+    println("Avg: ", mean(path_lengths))
+    println("median: ", median(path_lengths))
+    println("std: ", std(path_lengths))
+    println("min: ", minimum(path_lengths))
+    println("macx: ", maximum(path_lengths))
+    histogram_chart(path_lengths)
+
     #=
     R = mat_R(S, o, df)
     T = mat_T(o, df)
