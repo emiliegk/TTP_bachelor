@@ -22,10 +22,13 @@ function set_packing(T::Matrix{Int8}, R::Matrix{Int8}, omega::Vector{Any})
     num_trains = size(T, 1)
     num_paths = size(T, 2)
     num_resources = size(R, 1)
-    #=#MODEL 1+2
-    punishment = [o[7] for o in omega]=#
+    
+    #MODEL 1+2
+    punishment = [o[7] for o in omega]
+    
+    #=
     #MODEL 3
-    punishment = [o[11] for o in omega]
+    punishment = [o[11] for o in omega]=#
     
 
     # Create a model
@@ -73,11 +76,11 @@ function id_op_path(T::Matrix{Int8}, op_sol::Vector{Int8}, Omega::Vector{Any})
     path_set = [i[2] for i in Omega]
     t_id_set = [i[1] for i in Omega]
 
-    #=#MODEL 1+2
-    platform_set = [i[4] for i in Omega]=#
+    #MODEL 1+2
+    platform_set = [i[4] for i in Omega]
 
-    #MODEL 3
-    platform_set = [i[6] for i in Omega]
+    #=#MODEL 3
+    platform_set = [i[6] for i in Omega]=#
 
     #result matrix
     results = Matrix{Any}(undef, num_trains, 3)

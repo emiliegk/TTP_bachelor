@@ -9,7 +9,7 @@ using SparseArrays
 export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
-function find_trains(filename::String="Ophold_Kh.xlsx") 
+function find_trains(filename::String="Ophold på Kh - Onsdag 2022 1.xlsx") 
     df = XLSX.readxlsx(filename)
     
     if filename == "Ophold_Kh.xlsx"

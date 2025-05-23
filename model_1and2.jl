@@ -9,18 +9,17 @@ using SparseArrays
 export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
-function find_trains() 
-    filename = "Ophold på Kh - Onsdag 2022 1.xlsx"
+function find_trains(filename::String="Ophold på Kh - Onsdag 2022 1.xlsx") 
     df = XLSX.readxlsx(filename)
-    
-    if occursin("Ophold_Kh.xlsx", filename)
+        
+    if filename == "Ophold_Kh.xlsx"
         sheet = df["Data"]
-    elseif occursin("Ophold på Kh - Onsdag 2022 1.xlsx", filename)
+    elseif filename == "Ophold på Kh - Onsdag 2022 1.xlsx"
         sheet = df["FInal result"]
     end
-    
+        
     data = sheet["B2:J"*string(size(sheet[:], 1))] 
-    to_matrix = Matrix(data)  # Ensures row-wise structure
+    to_matrix = Matrix(data) # Ensures row-wise structure
         
     # Handle missing values in column 1 and column 2
     for i in 1:size(to_matrix, 1)  # Loop through each row
@@ -148,12 +147,12 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         for buffer in 3:10
             punishment = exp(-4/5*buffer)*10000
 
-           #= #MODEL 2
+           #MODEL 2
             if platform == 9
                 punishment += 200
             end
             # Punishment for the path length
-            punishment += 5 * length(combined_paths) =#
+            punishment += 5 * length(combined_paths)
 
             push!(expanded_omega, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
         end
