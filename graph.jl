@@ -1,7 +1,6 @@
 module Graph
 export addEdge, create_graph, displayAdjList
 using Pkg
-# Add if you don't have the package: Pkg.add("DataStructures") 
 using DataStructures
 
 function addEdge(adj, u, v) #Add edge from u to v

@@ -9,7 +9,7 @@ using SparseArrays
 export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
-function find_trains(filename::String) 
+function find_trains(filename::String="Ophold_Kh.xlsx") 
     df = XLSX.readxlsx(filename)
     
     if filename == "Ophold_Kh.xlsx"
@@ -287,7 +287,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     end
 
     final_omega = vcat(null_array, expanded_omega)
-    println(final_omega[450])
+    #=println(final_omega[450])=#
     return final_omega
 end
 
@@ -400,7 +400,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             
-            
+            #=
             ###############
             #Blocking full route from beginning
             ###############
@@ -472,7 +472,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end
+            end =#
             
 
             #=
@@ -547,10 +547,10 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end
-            =#
+            end =#
+            
 
-            #=
+            
             ###############
             #Blocking 1/3 route from beginning
             ###############
@@ -622,7 +622,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end=#
+            end
             
 
             #If junction is the platform
@@ -633,7 +633,6 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end
 
             #If junction is in path from platform
-            t
             if path == []
                 continue
             elseif path[end] == 59
@@ -648,7 +647,8 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-                
+            
+            #=
             ###############
             #Blocking full route from beginning
             ###############
@@ -704,7 +704,8 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end
+            end =#
+            
             
             
             #=
@@ -762,10 +763,10 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end 
-            =#
+            end =#
+            
 
-            #=
+            
             ###############
             #Blocking 1/3 route from beginning
             ###############
@@ -820,7 +821,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end=#
+            end 
         end
     end
     # Return both the matrix and column info for reference
