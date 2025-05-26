@@ -9,7 +9,7 @@ using SparseArrays
 export printpath, find_all_jcts, not_visited, find_paths, find_trains, omega, set_S, mat_R, train_time_mapping, mat_T, allocate_t_src, allocate_t_dst
 
 #Finds trains to Nørreport
-function find_trains(filename::String="Ophold på Kh - Onsdag 2022 1.xlsx") 
+function find_trains(filename::String="Ophold_Kh.xlsx") 
     df = XLSX.readxlsx(filename)
     
     if filename == "Ophold_Kh.xlsx"
@@ -359,7 +359,6 @@ end
 
 
 
-
 function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
     # Initialize matrix with correct dimensions
     init_m = zeros(Int8, length(S), length(omega))
@@ -622,7 +621,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end
+            end 
             
 
             #If junction is the platform
