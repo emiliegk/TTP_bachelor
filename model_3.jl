@@ -398,7 +398,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             
-            
+            #=
             ###############
             #Blocking full route from beginning
             ###############
@@ -470,10 +470,10 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end 
+            end =#
             
 
-            #=
+            
             ###############
             #Blocking 2/3 of the route
             ###############
@@ -545,7 +545,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end =#
+            end 
             
 
             #=
@@ -646,7 +646,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             
-            
+            #=
             ###############
             #Blocking full route from beginning
             ###############
@@ -702,11 +702,10 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end 
+            end =#
             
             
             
-            #=
             ###############
             #Blocking 2/3 route from beginning
             ###############
@@ -761,7 +760,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end =#
+            end 
             
 
             #=

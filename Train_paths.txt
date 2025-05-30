@@ -1,6 +1,7 @@
 ## MODEL 1, datasæt 2022 ##
 Running time = 10 min (CPU model: Apple M4, 16 GB)
 Size of omega = 244471
+Best objective 2.70*10^4
 
 -- Paths --
 Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
@@ -118,6 +119,7 @@ Train 1331: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 19, 20, 21, 23,
 ## MODEL 1, datasæt 2023 ##
 Running time = 9 min (CPU model: Apple M4, 16 GB)
 Size of omega = 186405
+Best objective = 2.04*10^4
 
 -- Paths --
 Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
@@ -209,6 +211,8 @@ Train 133: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80,
 ## MODEL 2, datasæt 2022 ##
 Running time = 11 min (CPU model: Apple M4, 16 GB)
 Size of omega = 244471
+Best objective = 3.70*10^4
+Size of S = 18228
 
 -- Paths --
 Train 121: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
@@ -326,6 +330,8 @@ Train 1331: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is
 ## MODEL 2, datasæt 2023 ##
 Running time = 8 min
 Size of omega = 186405
+Size of S = 18135
+Best objective 2.77*10^4
 
 -- Paths --
 Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
@@ -417,6 +423,7 @@ Train 133: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82,
 ## MODEL 3 med 0.3 block, datasæt 2022 ##
 Running time = 23 min (CPU model: Apple M4, 16 GB)
 Size of omega = 244471
+Best objective = 1.29*10^5
 
 -- Paths --
 Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
@@ -534,6 +541,7 @@ Train 1331: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22,
 ## MODEL 3 med 0.3 block, datasæt 2023 ##
 Running time = 18 min (CPU model: Apple M4, 16 GB)
 Size of omega = 186405
+Best objective = 2.75*10^4
 
 -- Paths --
 Train 121: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
@@ -625,7 +633,7 @@ Train 133: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82,
 ## MODEL 3 med 0.67 block, datasæt 2022 ##
 Running time = 23 min (CPU model: Apple M4, 16 GB)
 Size of omega = 244471
-Best objective 2.97*10^5
+Best objective = 2.97*10^5
 
 
 -- Paths --
