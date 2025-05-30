@@ -1,7 +1,7 @@
 using Pkg
 using DataStructures
 
-module All_paths
+module model_3
 using DataFrames
 using XLSX
 using Dates
@@ -257,7 +257,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         path_from_mid = omega[8]
         path_from_end = omega[9]
 
-        for buffer in 3
+        for buffer in 3:10
             punishment = exp(-4/5*buffer)*10000
             if platform == 9
                 punishment += 200
@@ -287,7 +287,6 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
     end
 
     final_omega = vcat(null_array, expanded_omega)
-    #=println(final_omega[450])=#
     return final_omega
 end
 
@@ -399,7 +398,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             
-            #=
+            
             ###############
             #Blocking full route from beginning
             ###############
@@ -471,7 +470,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end =#
+            end 
             
 
             #=
@@ -549,7 +548,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end =#
             
 
-            
+            #=
             ###############
             #Blocking 1/3 route from beginning
             ###############
@@ -621,7 +620,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end 
+            end =#
             
 
             #If junction is the platform
@@ -647,7 +646,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             
-            #=
+            
             ###############
             #Blocking full route from beginning
             ###############
@@ -703,7 +702,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end =#
+            end 
             
             
             
@@ -765,7 +764,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end =#
             
 
-            
+            #=
             ###############
             #Blocking 1/3 route from beginning
             ###############
@@ -820,7 +819,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end 
+            end =#
         end
     end
     # Return both the matrix and column info for reference
