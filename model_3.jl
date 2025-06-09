@@ -1,7 +1,7 @@
 using Pkg
 using DataStructures
 
-module All_paths
+module model_3
 using DataFrames
 using XLSX
 using Dates
@@ -265,7 +265,7 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         path_from_end = omega[9]
 
         #Add punishments
-        for buffer in 3
+        for buffer in 3:10
             punishment = exp(-4/5*buffer)*10000
             if platform == 9
                 punishment += 200
@@ -715,7 +715,6 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                     end
                 end
             end =#
-            
             
             
             #=

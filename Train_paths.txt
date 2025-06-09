@@ -1,0 +1,1052 @@
+## MODEL 1, datasæt 2022 ##
+Running time = 10 min (CPU model: Apple M4, 16 GB)
+Size of omega = 244471
+Best objective 2.70*10^4
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 1012: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 2221: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4302: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 1013: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4521: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1312: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 1014: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4500: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 321: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 27, 26, 49, 62, 98, 115, 116, 122] is selected on platform 2
+Train 3202: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 2323: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1315: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4202: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 823: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1015: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 8024402: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1314: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 1523: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4223: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1317: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1223: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2523: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 23: Path [125, 117, 119, 100, 63, 62, 49, 45, 34, 33, 28, 3, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 3
+Train 1016: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 2502: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1316: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 1017: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4325: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2204: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 21, 23, 25, 24, 127] is selected on platform 4
+Train 70225: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 3504: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 104: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1319: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1018: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 65006: Path [121, 115, 98, 97, 94, 88, 86, 84, 82, 80, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 119, 117, 118, 126] is selected on platform 5
+Train 2225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4404: Path [59, 42, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 125: Path [59, 57, 56, 53, 51, 37, 9, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 9
+Train 4304: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1019: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4525: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1318: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 4504: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1020: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 1206: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2327: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1321: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4206: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 21, 23, 25, 24, 127] is selected on platform 4
+Train 4427827: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15061527: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 5
+Train 393: Path [59, 57, 56, 53, 51, 37, 9, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 9
+Train 1021: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 806: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1320: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 308: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 4227: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1227: Path Any[] is selected on platform Any[]
+Train 2306: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1323: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2527: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 27: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 27, 33, 34, 35, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 2
+Train 1022: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 3208: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 9, 37, 51, 53, 56, 57, 59] is selected on platform 9
+Train 1322: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1023: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4329: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 2208: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 108: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 4429129: Path Any[] is selected on platform Any[]
+Train 3508: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 1325: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1024: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 70208: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 67, 61, 55, 48, 44, 8, 17, 23, 25, 24, 127] is selected on platform 8
+Train 10: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 28, 33, 34, 45, 64, 63, 100, 119, 117, 118, 126] is selected on platform 3
+Train 2229: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4308: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1025: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4529: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1324: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4508: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 1026: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 1210: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2331: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1327: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4210: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 23, 25, 24, 127] is selected on platform 5
+Train 15101531: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4431831: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1027: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 810: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1326: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 312: Path [121, 115, 98, 97, 94, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 32, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 4231: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1329: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1231: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2310: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2531: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 31: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 27, 33, 34, 35, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 2
+Train 1028: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 2510: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 1328: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 1029: Path [125, 117, 119, 100, 63, 62, 49, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 4333: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2212: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3512: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 4433: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 53, 56, 57, 59] is selected on platform 7
+Train 112: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 23, 25, 24, 127] is selected on platform 6
+Train 133: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 28, 33, 34, 35, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 1331: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 19, 20, 21, 23, 25, 24, 127] is selected on platform 1
+
+## MODEL 1, datasæt 2023 ##
+Running time = 9 min (CPU model: Apple M4, 16 GB)
+Size of omega = 186405
+Best objective = 2.04*10^4
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 2221: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4521: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4402: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 2423: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 4500: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 321: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 2323: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 38, 41, 43, 47, 75, 78, 81, 87, 96, 104, 124] is selected on platform 5
+Train 4202: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 823: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 8023402: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1523: Path [59, 57, 56, 53, 51, 37, 9, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 9
+Train 4223: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1223: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 4
+Train 2302: Path [123, 92, 88, 86, 76, 65, 35, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2523: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2404: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 23: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 67, 58, 47, 43, 41, 38, 30, 5, 30, 38, 50, 51, 60, 66, 77, 80, 82, 84, 86, 88, 94, 97, 98, 115, 116, 122] is selected on platform 5
+Train 4425: Path [128, 25, 23, 21, 20, 19, 15, 11, 3, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 3
+Train 2502: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 4325: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2204: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 21, 23, 25, 24, 127] is selected on platform 4
+Train 104: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1043404: Path Any[] is selected on platform Any[]
+Train 3504: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 9, 37, 51, 53, 56, 57, 59] is selected on platform 9
+Train 6: Path [121, 115, 98, 97, 94, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 2225: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 125: Path [59, 42, 34, 33, 27, 2, 27, 26, 49, 62, 98, 115, 116, 122] is selected on platform 2
+Train 4304: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 4525: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4406: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2427: Path [128, 25, 23, 21, 16, 5, 30, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4504: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1206: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2327: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4206: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 3427827: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15061527: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 393: Path [59, 57, 56, 53, 51, 37, 9, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 9
+Train 806: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 308: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 35, 34, 33, 27, 2, 27, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 2
+Train 4227: Path [128, 25, 23, 21, 16, 12, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1227: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2306: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 2527: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 27: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 2408: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4429: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 4329: Path [128, 25, 23, 21, 16, 5, 30, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 5
+Train 2208: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 19, 20, 21, 23, 25, 24, 127] is selected on platform 2
+Train 108: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3429129: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 4
+Train 3508: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 9, 37, 51, 53, 56, 57, 59] is selected on platform 9
+Train 208: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 10: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 28, 33, 34, 45, 64, 63, 100, 119, 117, 118, 126] is selected on platform 3
+Train 2229: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4308: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 4529: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4410: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 35, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2431: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 4508: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1210: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2331: Path [128, 25, 23, 21, 16, 5, 30, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 5
+Train 4210: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 3431831: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15101531: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 9, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 9
+Train 810: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 332: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 4231: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1231: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2310: Path [123, 92, 88, 86, 76, 65, 35, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2531: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2412: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 31: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2510: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4433: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 4333: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2212: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 112: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 9, 37, 51, 53, 56, 57, 59] is selected on platform 9
+Train 3433: Path Any[] is selected on platform Any[]
+Train 3512: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 29, 28, 33, 34, 42, 59] is selected on platform 4
+Train 133: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 6
+
+## MODEL 2, datasæt 2022 ##
+Running time = 11 min (CPU model: Apple M4, 16 GB)
+Size of omega = 244471
+Best objective = 3.70*10^4
+Size of S = 18228
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 1012: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 2221: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4302: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1013: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4521: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1312: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 1014: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4500: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 321: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 27, 26, 49, 62, 98, 115, 116, 122] is selected on platform 2
+Train 3202: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 2323: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1315: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4202: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 823: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1015: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 8024402: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1314: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 1523: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4223: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1317: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1223: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2523: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 23: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 3
+Train 1016: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 2502: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1316: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 1017: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4325: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2204: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 70225: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 3504: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 104: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1319: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 1018: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 65006: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 2225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4404: Path [59, 42, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 125: Path [59, 57, 56, 53, 51, 37, 9, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 9
+Train 4304: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1019: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4525: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1318: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 4504: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1020: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 1206: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2327: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1321: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4206: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 4427827: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15061527: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 5
+Train 393: Path [59, 57, 56, 53, 51, 37, 9, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 9
+Train 1021: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 806: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1320: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 308: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 4227: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1227: Path Any[] is selected on platform Any[]
+Train 2306: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1323: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2527: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 27: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 27, 33, 34, 35, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 2
+Train 1022: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 3208: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 9, 37, 51, 53, 56, 57, 59] is selected on platform 9
+Train 1322: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1023: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4329: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 2208: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 108: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 4429129: Path Any[] is selected on platform Any[]
+Train 3508: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 1325: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1024: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 70208: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 67, 61, 55, 48, 44, 8, 17, 23, 25, 24, 127] is selected on platform 8
+Train 10: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 28, 33, 34, 45, 64, 63, 100, 119, 117, 118, 126] is selected on platform 3
+Train 2229: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4308: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1025: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4529: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1324: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4508: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 23, 25, 24, 127] is selected on platform 6
+Train 1026: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 1210: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2331: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1327: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4210: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 23, 25, 24, 127] is selected on platform 5
+Train 15101531: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4431831: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1027: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 810: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1326: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 312: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 4231: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1329: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1231: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2310: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2531: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 31: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 27, 33, 34, 35, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 2
+Train 1028: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 2510: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 1328: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 1029: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 4333: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2212: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3512: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 4433: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 53, 56, 57, 59] is selected on platform 7
+Train 112: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 133: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 4
+Train 1331: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+
+## MODEL 2, datasæt 2023 ##
+Running time = 8 min
+Size of omega = 186405
+Size of S = 18135
+Best objective 2.77*10^4
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 2221: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4521: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4402: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 2423: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4500: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 321: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 2323: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4202: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 823: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 8023402: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1523: Path [59, 57, 56, 53, 51, 37, 36, 29, 4, 29, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 4
+Train 4223: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1223: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2523: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2404: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 23: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 4425: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2502: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4325: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2204: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 104: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1043404: Path Any[] is selected on platform Any[]
+Train 3504: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 29, 36, 37, 51, 53, 56, 57, 59] is selected on platform 4
+Train 6: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 28, 33, 34, 45, 64, 63, 100, 119, 117, 118, 126] is selected on platform 3
+Train 2225: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 125: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4304: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4525: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4406: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2427: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 4504: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 1206: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2327: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4206: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 3427827: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15061527: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 393: Path [59, 57, 56, 53, 51, 37, 36, 29, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 806: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 308: Path [121, 115, 98, 62, 49, 26, 1, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 1
+Train 4227: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1227: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2306: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 2527: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 27: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 2408: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4429: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 4329: Path [128, 25, 23, 21, 16, 5, 30, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 5
+Train 2208: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 108: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3429129: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 3508: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 29, 36, 37, 51, 53, 56, 57, 59] is selected on platform 4
+Train 208: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 10: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 2229: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4308: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4529: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4410: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2431: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 4508: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1210: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2331: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4210: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 3431831: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15101531: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 29, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 4
+Train 810: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 332: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 4231: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1231: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2310: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2531: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2412: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 31: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 2510: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 4433: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 4333: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 2212: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 112: Path Any[] is selected on platform Any[]
+Train 3433: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 3512: Path [123, 92, 64, 45, 34, 33, 28, 3, 28, 33, 34, 42, 59] is selected on platform 3
+Train 133: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 7
+
+## MODEL 3 med 0.3 block, datasæt 2022 ##
+Running time = 23 min (CPU model: Apple M4, 16 GB)
+Size of omega = 244471
+Best objective = 1.29*10^5
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 1012: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 2221: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 5
+Train 4302: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1013: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4521: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1312: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 1014: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4500: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 321: Path Any[] is selected on platform Any[]
+Train 3202: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2323: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1315: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4202: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 823: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1015: Path Any[] is selected on platform Any[]
+Train 8024402: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1314: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 1523: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4223: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1317: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1223: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2523: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 23: Path Any[] is selected on platform Any[]
+Train 1016: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 2502: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 1316: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 1017: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4325: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2204: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 70225: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 3504: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 104: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1319: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1018: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 65006: Path Any[] is selected on platform Any[]
+Train 2225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4404: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 23, 25, 24, 127] is selected on platform 6
+Train 125: Path [59, 57, 56, 53, 51, 37, 9, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 9
+Train 4304: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1019: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4525: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1318: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 4504: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 23, 25, 24, 127] is selected on platform 5
+Train 1020: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 1206: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2327: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1321: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4206: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 32, 7, 13, 17, 23, 25, 24, 127] is selected on platform 7
+Train 4427827: Path [128, 25, 23, 21, 16, 5, 30, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 5
+Train 15061527: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 393: Path [59, 42, 34, 33, 27, 2, 27, 26, 49, 62, 98, 115, 116, 122] is selected on platform 2
+Train 1021: Path Any[] is selected on platform Any[]
+Train 806: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1320: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 308: Path Any[] is selected on platform Any[]
+Train 4227: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1227: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2306: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1323: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 2527: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 27: Path Any[] is selected on platform Any[]
+Train 1022: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 3208: Path [121, 115, 98, 62, 49, 26, 1, 26, 27, 33, 34, 42, 59] is selected on platform 1
+Train 1322: Path Any[] is selected on platform Any[]
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 1023: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4329: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2208: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 108: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 28, 33, 34, 42, 59] is selected on platform 3
+Train 4429129: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 3508: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 1325: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1024: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 70208: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 10: Path Any[] is selected on platform Any[]
+Train 2229: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4308: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 1025: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4529: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 1324: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 4508: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1026: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 1210: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 2331: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1327: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4210: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 15101531: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4431831: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1027: Path Any[] is selected on platform Any[]
+Train 810: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1326: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 312: Path Any[] is selected on platform Any[]
+Train 4231: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1329: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1231: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2310: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2531: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 31: Path Any[] is selected on platform Any[]
+Train 1028: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 2510: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 1328: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 1029: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4333: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2212: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3512: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 23, 25, 24, 127] is selected on platform 6
+Train 4433: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 53, 56, 57, 59] is selected on platform 7
+Train 112: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 133: Path [128, 25, 23, 21, 20, 19, 15, 11, 3, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 3
+Train 1331: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+
+## MODEL 3 med 0.3 block, datasæt 2023 ##
+Running time = 18 min (CPU model: Apple M4, 16 GB)
+Size of omega = 186405
+Best objective = 2.75*10^4
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2221: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4521: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4402: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 2423: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4500: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 321: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 2323: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4202: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 823: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 8023402: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1523: Path [59, 57, 56, 53, 51, 37, 36, 29, 4, 29, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 4
+Train 4223: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1223: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2523: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2404: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 23: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 4425: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2502: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4325: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2204: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 104: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1043404: Path Any[] is selected on platform Any[]
+Train 3504: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 29, 36, 37, 51, 53, 56, 57, 59] is selected on platform 4
+Train 6: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 28, 33, 34, 45, 64, 63, 100, 119, 117, 118, 126] is selected on platform 3
+Train 2225: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 125: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4304: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4525: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4406: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2427: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 4
+Train 4504: Path [123, 92, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 1206: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2327: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4206: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3427827: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15061527: Path [123, 92, 64, 45, 34, 33, 28, 3, 28, 33, 34, 35, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 3
+Train 393: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 806: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 308: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 27, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 2
+Train 4227: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1227: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2306: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 2527: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 27: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 28, 33, 34, 35, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 3
+Train 2408: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 4429: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 4329: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 2208: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 108: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 3429129: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 3508: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 208: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 10: Path [121, 115, 98, 62, 49, 26, 1, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 1
+Train 2229: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 4308: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4529: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4410: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2431: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4508: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1210: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 2331: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4210: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3431831: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15101531: Path [123, 92, 64, 45, 34, 33, 28, 3, 28, 33, 34, 35, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 3
+Train 810: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 332: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 27, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 2
+Train 4231: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1231: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2310: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 2531: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2412: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 31: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 3
+Train 2510: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 4433: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 4333: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 6
+Train 2212: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 112: Path [121, 115, 98, 62, 49, 26, 1, 26, 27, 33, 34, 42, 59] is selected on platform 1
+Train 3433: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 3512: Path Any[] is selected on platform Any[]
+Train 133: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 7
+
+## MODEL 3 med 0.67 block, datasæt 2022 ##
+Running time = 23 min (CPU model: Apple M4, 16 GB)
+Size of omega = 244471
+Best objective = 2.97*10^5
+
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 1012: Path Any[] is selected on platform Any[]
+Train 2221: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 31, 39, 40, 48, 55, 61, 95, 104, 124] is selected on platform 5
+Train 4302: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1013: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4521: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1312: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 1014: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4500: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 321: Path Any[] is selected on platform Any[]
+Train 3202: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2323: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1315: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 4202: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 823: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1015: Path Any[] is selected on platform Any[]
+Train 8024402: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1314: Path Any[] is selected on platform Any[]
+Train 1523: Path Any[] is selected on platform Any[]
+Train 4223: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2302: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1317: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 1223: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2523: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 23: Path Any[] is selected on platform Any[]
+Train 1016: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 2502: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1316: Path Any[] is selected on platform Any[]
+Train 1017: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4325: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2204: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 70225: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 3504: Path Any[] is selected on platform Any[]
+Train 104: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 1319: Path Any[] is selected on platform Any[]
+Train 1018: Path Any[] is selected on platform Any[]
+Train 65006: Path [121, 115, 98, 62, 49, 26, 1, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 1
+Train 2225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4404: Path [59, 42, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 125: Path [59, 42, 34, 33, 27, 2, 27, 26, 49, 62, 98, 115, 116, 122] is selected on platform 2
+Train 4304: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 1019: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4525: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1318: Path Any[] is selected on platform Any[]
+Train 4504: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 1020: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 100, 119, 117, 118, 126] is selected on platform 5
+Train 1206: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2327: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1321: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 4206: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4427827: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 15061527: Path Any[] is selected on platform Any[]
+Train 393: Path [59, 42, 34, 33, 27, 2, 27, 26, 49, 62, 98, 115, 116, 122] is selected on platform 2
+Train 1021: Path Any[] is selected on platform Any[]
+Train 806: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 1320: Path Any[] is selected on platform Any[]
+Train 308: Path Any[] is selected on platform Any[]
+Train 4227: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1227: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2306: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1323: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 2527: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 27: Path Any[] is selected on platform Any[]
+Train 1022: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 4
+Train 3208: Path [121, 115, 98, 62, 49, 26, 1, 26, 27, 33, 34, 42, 59] is selected on platform 1
+Train 1322: Path Any[] is selected on platform Any[]
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 1023: Path Any[] is selected on platform Any[]
+Train 4329: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2208: Path Any[] is selected on platform Any[]
+Train 108: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 29, 4, 29, 36, 37, 51, 53, 56, 57, 59] is selected on platform 4
+Train 4429129: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 3508: Path [123, 92, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 1325: Path Any[] is selected on platform Any[]
+Train 1024: Path Any[] is selected on platform Any[]
+Train 70208: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 10: Path Any[] is selected on platform Any[]
+Train 2229: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4308: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1025: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4529: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1324: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4508: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1026: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 1210: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 2331: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1327: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4210: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 15101531: Path Any[] is selected on platform Any[]
+Train 4431831: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1027: Path Any[] is selected on platform Any[]
+Train 810: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1326: Path Any[] is selected on platform Any[]
+Train 312: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4231: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1329: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1231: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2310: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2531: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 31: Path Any[] is selected on platform Any[]
+Train 1028: Path Any[] is selected on platform Any[]
+Train 2510: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1328: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 1029: Path Any[] is selected on platform Any[]
+Train 4333: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2212: Path Any[] is selected on platform Any[]
+Train 3512: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 4433: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 112: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 133: Path [128, 25, 23, 21, 20, 19, 15, 11, 3, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 3
+Train 1331: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+
+## MODEL 3 med 0.67 block, datasæt 2023 ##
+Running time = 18 min (CPU model: Apple M4, 16 GB)
+Size of omega = 186405
+Best objective 1.16*10^5
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2221: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4302: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4521: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4402: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2423: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4500: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 321: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 2323: Path [59, 42, 34, 33, 28, 29, 4, 29, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 4
+Train 4202: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 823: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 8023402: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1523: Path Any[] is selected on platform Any[]
+Train 4223: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1223: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2302: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2523: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2404: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 23: Path [125, 117, 119, 120, 84, 82, 80, 77, 66, 60, 51, 37, 36, 29, 4, 29, 28, 33, 34, 35, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 4425: Path Any[] is selected on platform Any[]
+Train 2502: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4325: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2204: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 104: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1043404: Path Any[] is selected on platform Any[]
+Train 3504: Path Any[] is selected on platform Any[]
+Train 6: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 27, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 2
+Train 2225: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 125: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4304: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 4525: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4406: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2427: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 7
+Train 4504: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1206: Path [121, 115, 98, 97, 94, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 2327: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 4
+Train 4206: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 3427827: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15061527: Path Any[] is selected on platform Any[]
+Train 393: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 806: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 308: Path [121, 115, 98, 62, 49, 26, 1, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 1
+Train 4227: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1227: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2306: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 2527: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 27: Path Any[] is selected on platform Any[]
+Train 2408: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4429: Path Any[] is selected on platform Any[]
+Train 4329: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2208: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 108: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3429129: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 3508: Path Any[] is selected on platform Any[]
+Train 208: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 10: Path [121, 115, 98, 97, 94, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 2229: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4308: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4529: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4410: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2431: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4508: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1210: Path [121, 115, 98, 62, 49, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2331: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4210: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3431831: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 15101531: Path Any[] is selected on platform Any[]
+Train 810: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 332: Path [121, 115, 98, 62, 49, 45, 34, 33, 27, 2, 27, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 2
+Train 4231: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1231: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2310: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2531: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2412: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 31: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 2510: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 4433: Path Any[] is selected on platform Any[]
+Train 4333: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2212: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 112: Path [121, 115, 98, 62, 49, 26, 1, 26, 27, 33, 34, 42, 59] is selected on platform 1
+Train 3433: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 3512: Path Any[] is selected on platform Any[]
+Train 133: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 7
+
+## MODEL 3 med full block, datasæt 2022 ##
+Running time = 25 min (CPU model: Apple M4, 16 GB)
+Size of omega = 244471
+Best objective 3.07*10^5
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 20, 19, 18, 14, 1, 26, 49, 62, 98, 115, 116, 122] is selected on platform 1
+Train 1012: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 2221: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4302: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1013: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4521: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1312: Path Any[] is selected on platform Any[]
+Train 1014: Path [128, 25, 23, 21, 16, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4500: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 321: Path Any[] is selected on platform Any[]
+Train 3202: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2323: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1315: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 4202: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 823: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1015: Path Any[] is selected on platform Any[]
+Train 8024402: Path [123, 92, 64, 45, 34, 33, 27, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1314: Path Any[] is selected on platform Any[]
+Train 1523: Path Any[] is selected on platform Any[]
+Train 4223: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1317: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1223: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2523: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 23: Path Any[] is selected on platform Any[]
+Train 1016: Path Any[] is selected on platform Any[]
+Train 2502: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 1316: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 1017: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4325: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2204: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 70225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 3504: Path Any[] is selected on platform Any[]
+Train 104: Path [121, 115, 98, 97, 94, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 38, 30, 5, 16, 21, 20, 22, 24, 127] is selected on platform 5
+Train 1319: Path Any[] is selected on platform Any[]
+Train 1018: Path Any[] is selected on platform Any[]
+Train 65006: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 100, 119, 117, 118, 126] is selected on platform 4
+Train 2225: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4404: Path [59, 42, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 125: Path [59, 57, 56, 53, 51, 37, 9, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 9
+Train 4304: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1019: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 4525: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1318: Path Any[] is selected on platform Any[]
+Train 4504: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1020: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 7
+Train 1206: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2327: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 4
+Train 1321: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 4206: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4427827: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15061527: Path Any[] is selected on platform Any[]
+Train 393: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 1021: Path Any[] is selected on platform Any[]
+Train 806: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1320: Path Any[] is selected on platform Any[]
+Train 308: Path Any[] is selected on platform Any[]
+Train 4227: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1227: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2306: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1323: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2527: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 27: Path Any[] is selected on platform Any[]
+Train 1022: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 3208: Path Any[] is selected on platform Any[]
+Train 1322: Path Any[] is selected on platform Any[]
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 1023: Path Any[] is selected on platform Any[]
+Train 4329: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2208: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 18, 22, 24, 127] is selected on platform 3
+Train 108: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 4429129: Path [128, 25, 23, 21, 20, 19, 18, 14, 10, 2, 27, 26, 49, 62, 98, 115, 116, 122] is selected on platform 2
+Train 3508: Path Any[] is selected on platform Any[]
+Train 1325: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1024: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 70208: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 10: Path Any[] is selected on platform Any[]
+Train 2229: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4308: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1025: Path Any[] is selected on platform Any[]
+Train 4529: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1324: Path Any[] is selected on platform Any[]
+Train 4508: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1026: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 1210: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2331: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1327: Path [125, 117, 119, 100, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 4210: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 15, 19, 20, 22, 24, 127] is selected on platform 3
+Train 15101531: Path Any[] is selected on platform Any[]
+Train 4431831: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1027: Path Any[] is selected on platform Any[]
+Train 810: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1326: Path Any[] is selected on platform Any[]
+Train 312: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 38, 30, 5, 30, 38, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 5
+Train 4231: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1329: Path [125, 117, 119, 100, 63, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 1231: Path [128, 25, 23, 21, 20, 19, 15, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 2310: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 2531: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 31: Path Any[] is selected on platform Any[]
+Train 1028: Path Any[] is selected on platform Any[]
+Train 2510: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 1328: Path [128, 25, 23, 21, 16, 12, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 1029: Path Any[] is selected on platform Any[]
+Train 4333: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2212: Path Any[] is selected on platform Any[]
+Train 3512: Path [123, 92, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 4433: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 112: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 133: Path [128, 25, 23, 21, 20, 19, 15, 11, 3, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 3
+Train 1331: Path [125, 117, 119, 100, 63, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+
+## MODEL 3 med full block, datasæt 2023 ##
+Running time =  18 min (CPU model: Apple M4, 16 GB)
+Size of omega = 186405
+Best objective = 1.26*10^5
+
+-- Paths --
+Train 121: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2221: Path [59, 57, 56, 53, 51, 50, 46, 43, 41, 40, 39, 32, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4521: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4402: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2423: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4500: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 321: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 2323: Path [59, 57, 56, 53, 51, 37, 36, 29, 4, 29, 36, 37, 51, 60, 66, 77, 78, 81, 87, 96, 104, 124] is selected on platform 4
+Train 4202: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 823: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 8023402: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1523: Path Any[] is selected on platform Any[]
+Train 4223: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1223: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2302: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2523: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2404: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 23: Path [125, 117, 119, 120, 84, 82, 80, 77, 66, 60, 51, 37, 36, 29, 4, 29, 28, 33, 34, 45, 49, 62, 98, 115, 116, 122] is selected on platform 4
+Train 4425: Path Any[] is selected on platform Any[]
+Train 2502: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4325: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2204: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 104: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 225: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1043404: Path Any[] is selected on platform Any[]
+Train 3504: Path Any[] is selected on platform Any[]
+Train 6: Path Any[] is selected on platform Any[]
+Train 2225: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 125: Path [59, 57, 56, 53, 51, 50, 38, 30, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4304: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4525: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4406: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2427: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4504: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1206: Path [121, 115, 98, 97, 94, 88, 86, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 12, 16, 21, 20, 22, 24, 127] is selected on platform 6
+Train 2327: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4206: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 3427827: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 15061527: Path Any[] is selected on platform Any[]
+Train 393: Path [59, 57, 56, 53, 51, 37, 36, 29, 4, 29, 36, 37, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 4
+Train 806: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 308: Path [121, 115, 98, 62, 49, 26, 1, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 1
+Train 4227: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 1227: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2306: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2527: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 27: Path Any[] is selected on platform Any[]
+Train 2408: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 20, 22, 24, 127] is selected on platform 4
+Train 2506: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4429: Path Any[] is selected on platform Any[]
+Train 4329: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2208: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 108: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 3429129: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 3508: Path Any[] is selected on platform Any[]
+Train 208: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 10: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 50, 46, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 120, 118, 126] is selected on platform 6
+Train 2229: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4308: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 4529: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 4410: Path [121, 115, 98, 62, 49, 26, 1, 14, 18, 22, 24, 127] is selected on platform 1
+Train 2431: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 4508: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 1210: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 2331: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 4210: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 3431831: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 15101531: Path Any[] is selected on platform Any[]
+Train 810: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 332: Path [121, 115, 98, 62, 49, 26, 1, 26, 49, 62, 63, 100, 119, 117, 118, 126] is selected on platform 1
+Train 4231: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 1231: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 5
+Train 2310: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 2531: Path [128, 25, 23, 17, 13, 7, 32, 44, 48, 55, 61, 95, 104, 124] is selected on platform 7
+Train 2412: Path [121, 115, 98, 97, 94, 88, 86, 76, 65, 60, 51, 37, 36, 29, 4, 15, 19, 18, 22, 24, 127] is selected on platform 4
+Train 31: Path [125, 117, 119, 120, 84, 82, 81, 78, 75, 47, 43, 41, 40, 39, 31, 6, 31, 39, 40, 41, 43, 46, 50, 51, 60, 65, 76, 86, 88, 94, 97, 116, 122] is selected on platform 6
+Train 2510: Path [123, 92, 64, 45, 34, 33, 28, 3, 11, 10, 14, 18, 22, 24, 127] is selected on platform 3
+Train 4433: Path Any[] is selected on platform Any[]
+Train 4333: Path [128, 25, 23, 17, 8, 44, 48, 55, 61, 95, 104, 124] is selected on platform 8
+Train 2212: Path [123, 92, 64, 45, 34, 33, 27, 2, 10, 14, 18, 22, 24, 127] is selected on platform 2
+Train 112: Path [121, 115, 98, 62, 49, 26, 1, 26, 27, 33, 34, 42, 59] is selected on platform 1
+Train 3433: Path [128, 25, 23, 21, 16, 5, 30, 38, 50, 51, 53, 56, 57, 59] is selected on platform 5
+Train 3512: Path Any[] is selected on platform Any[]
+Train 133: Path [128, 25, 23, 17, 13, 7, 32, 39, 40, 41, 43, 46, 66, 77, 80, 82, 84, 86, 88, 94, 97, 116, 122] is selected on platform 7
