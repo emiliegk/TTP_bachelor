@@ -147,12 +147,12 @@ function omega(g_to::Tuple{Vector{Vector{Int}}, Int}, g_from::Tuple{Vector{Vecto
         for buffer in 3:10
             punishment = exp(-4/5*buffer)*10000
 
-           #MODEL 2
+           #=#MODEL 2
             if platform == 9
                 punishment += 200
             end
             # Punishment for the path length
-            punishment += 5 * length(combined_paths)
+            punishment += 5 * length(combined_paths)=#
 
             push!(expanded_omega, (train_id, combined_paths, path_to, platform, path_from, buffer, punishment))
         end

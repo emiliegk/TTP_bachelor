@@ -473,7 +473,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end =#
             
 
-            
+            #=
             ###############
             #Blocking 2/3 of the route
             ###############
@@ -545,10 +545,10 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end 
+            end =#
             
 
-            #=
+            
             ###############
             #Blocking 1/3 route from beginning
             ###############
@@ -620,7 +620,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end =#
+            end 
             
 
             #If junction is the platform
@@ -705,7 +705,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
             end =#
             
             
-            
+            #=
             ###############
             #Blocking 2/3 route from beginning
             ###############
@@ -760,10 +760,10 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end 
+            end =#
             
 
-            #=
+            
             ###############
             #Blocking 1/3 route from beginning
             ###############
@@ -818,7 +818,7 @@ function mat_R(S::Vector{Any}, omega::Vector{Any}, df::Matrix{Any})
                         init_m[r, c] = 1
                     end
                 end
-            end =#
+            end 
         end
     end
     # Return both the matrix and column info for reference

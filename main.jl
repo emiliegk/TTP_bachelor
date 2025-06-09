@@ -6,10 +6,10 @@ using Gurobi
 
 include("graph.jl") 
 using .Graph
-include("model_3.jl")
-using .model_3
-#=include("model_1and2.jl")
-using .model_1and2=#
+#=include("model_3.jl")
+using .model_3=#
+include("model_1and2.jl")
+using .model_1and2
 include("optimization.jl")
 using .optimization
 
@@ -29,11 +29,7 @@ function main()
     
     
     S = set_S(to_kh, from_kh, df)
-    println("Size of S: ", length(S))
-    println("")
     o = omega(to_kh, from_kh, to_w, from_w, junct, df)
-    println("Size of omega: ", length(o))
-    println("")
     
     
     R = mat_R(S, o, df)
