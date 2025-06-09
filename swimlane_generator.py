@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 # Read and prepare data
-df = pd.read_csv('train_schedule_with_paths.csv')
+df = pd.read_csv('train_schedule_with_paths.csv') #Make sure this file name matches the output from optimization.jl
 
 # Store Any[] train IDs
 any_df = pd.read_csv('train_schedule_with_paths.csv')
@@ -113,14 +113,14 @@ for i, (start, end) in enumerate(time_ranges, 1):
             row=i, col=1
         )
 
-    # Set axes properties (keep dtick for 5 minutes for labels)
+    # Set axes properties 
     fig.update_xaxes(
         range=[time_start_range, time_end_range],
         tickformat='%H:%M',
         row=i, col=1,
         tick0=grid_start_time,
-        dtick=five_minutes_ms,  # Keep dtick at 5 minutes for labels
-        tickangle=30,  # Force horizontal labels
+        dtick=five_minutes_ms,  
+        tickangle=30,  
         tickfont=dict(size=10)
     )
     fig.update_yaxes(
@@ -133,18 +133,18 @@ for i, (start, end) in enumerate(time_ranges, 1):
         tickangle=30
     )
 
-# Title above null-path trains" 
+# Title above null-path trains
 fig.add_trace(go.Scatter(
     x=[None],
     y=[None],
     mode='lines',
-    line=dict(width=0),  # Invisible trace
-    name='<b>Trains with Null Path:</b>',  # Bold title
-    legendgroup='null_trains_header',  # Separate group for the header
+    line=dict(width=0),  
+    name='<b>Trains with Null Path:</b>', 
+    legendgroup='null_trains_header',  
     showlegend=True
 ))
 
-# --- List train IDs under the title with indentation ---
+#List train IDs under the title with indentation
 for train_id in any_trains:
     fig.add_trace(go.Scatter(
         x=[None],
@@ -152,12 +152,12 @@ for train_id in any_trains:
         mode='markers + lines',
        marker=dict(
             symbol='circle',
-            opacity=0.5,      # Must be visible
-            size=2,         # Very small (minimum recommended: 2)
+            opacity=0.5,      
+            size=2,         
             color='black',
-            line=dict(width=0)  # Remove any border
+            line=dict(width=0)  
         ),
-        line=dict(width=0),     # Hide the line
+        line=dict(width=0),    
         name=f'TrainID: {train_id}',
         legendgroup='null_trains_items',
         showlegend=True
@@ -166,14 +166,14 @@ for train_id in any_trains:
 # Update layout to control legend appearance
 fig.update_layout(
     legend=dict(
-        traceorder='normal',  # Maintain the order we added traces
-        itemsizing='constant',  # Keep item sizes consistent
-        itemwidth=30,          # Reduces the width allocated to each legend item
+        traceorder='normal',  
+        itemsizing='constant',  
+        itemwidth=30,          
         font=dict(size=10),
-        groupclick='toggleitem'  # Allow individual items to be toggled
+        groupclick='toggleitem'  
     )
 )
-# Update layout
+
 fig.update_layout(
     title_text="Train Platform Occupancy Schedule",
     title_x=0.5,

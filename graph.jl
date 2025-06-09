@@ -3,10 +3,12 @@ export addEdge, create_graph, displayAdjList
 using Pkg
 using DataStructures
 
-function addEdge(adj, u, v) #Add edge from u to v
-    push!(adj[u], v)  # Adjusting for 1-based indexing in Julia
+#Add edge from u to v
+function addEdge(adj, u, v) 
+    push!(adj[u], v) 
 end
 
+#display adjacency list
 function displayAdjList(adj)
     for (i, neighbors) in enumerate(adj)
         print("$i: ")

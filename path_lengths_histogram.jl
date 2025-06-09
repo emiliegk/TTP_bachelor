@@ -1,9 +1,7 @@
 
-module plot_m
+module plot_histogram
 export histogram_chart
-
 using Plots
-
 using Statistics
 using StatsBase
 
@@ -19,20 +17,20 @@ function histogram_chart(paths::Vector{Int64})
     hist_data = fit(Histogram, path_lengths, 
                    nbins=clamp(ceil(Int, sqrt(length(path_lengths))), 10, 200))
     
-    # Create the histogram plot (now with `legend=true`)
+    # Create the histogram plot 
     p = histogram(path_lengths,
             bins=hist_data.edges[1],
             title="Histogram of Path Lengths 2022",
             xlabel="Path Length",
             ylabel="Frequency (count)",
-            legend=true,  # Enable legend
+            legend=true,  
             legendfontsize=18,
             label="Paths",
             color=:viridis,
             size=(1600, 900),
             dpi=300,
-            xguidefontsize=18,      # Font size for the x-axis label (NEW)
-            yguidefontsize=18,      # Font size for the y-axis label (NEW)
+            xguidefontsize=18,      
+            yguidefontsize=18,      
             xtickfontsize=18, 
             ytickfontsize=18,
             titlefontsize=20,
@@ -44,18 +42,20 @@ function histogram_chart(paths::Vector{Int64})
     # Add reference lines with explicit labels
     vline!([mean(path_lengths)], 
            line=(:dash, 2, :red), 
-           label="Mean ($(round(mean(path_lengths); digits=1)))")  # Shows value
+           label="Mean ($(round(mean(path_lengths); digits=1)))")  
     
     vline!([median(path_lengths)], 
            line=(:dash, 2, :blue), 
-           label="Median ($(round(median(path_lengths); digits=1)))")  # Shows value
+           label="Median ($(round(median(path_lengths); digits=1)))")  
     
     max_freq = maximum(hist_data.weights)
     annotate!(maximum(path_lengths)*0.7, max_freq*0.9, 
              text("number of paths = $(length(path_lengths))", 14))
     Plots.display(p)
-    savefig(p, "path_lengths_2022.png")
-    println("Plot saved as 'path_lengths_2022.png'")
+
+    # Save the plot as a PNG file
+    savefig(p, "path_lengths_2022.png") 
+    println("Plot saved as 'path_lengths_2022.png'") #Make sure the name matches the file you save
     return p
 end
 
